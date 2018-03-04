@@ -19,7 +19,7 @@ The guide is provided "as is" without warranty of any kind, either expressed or 
 Download [the latest boot image](https://www.gentoo.org/downloads/) from www.gentoo.org. I recommend that you download the Hybrid ISO (LiveDVD) - 2GiB and boot from text mode. 
 After downloading the iso, insert a usb thumb drive and use `lsblk` to confirm the device path. Then run:
 ```
-$ dd if=/path/to/the/iso of=/dev/sdc bs=4M
+# dd if=/path/to/the/iso of=/dev/sdc bs=4M
 ```
 
 The above command will "write" the iso to your external hard drive from which we will be able to boot later.
@@ -49,7 +49,7 @@ Use `cfdisk`, `cgdisk`, `fdisk` or whatever tools you like to partition the driv
 
 After all these steps, my `lsblk` output is as follow:
 ```
-$ lsblk
+# lsblk
 NAME                       MAJ:MIN RM   SIZE RO TYPE  MOUNTPOINT
 sda                          8:0    0 233.8G  0 disk
 ├─sda1                       8:1    0   200M  0 part                --> EFI Partition
@@ -173,28 +173,14 @@ Note that it's `-O2`, not `-02`.
 Since we have an 8-core cpu, so core_number+1 = 9.
 
 
-### 9. Selecting a Profile
-In my case, I'm using `KDE + i3-gaps` and `systemd`.
-So I chose `[20]  default/linux/amd64/17.0/desktop/plasma/systemd (stable) *`
-```
-# emerge-webrsync
-# eselect profile list
-# eselect profile set <profile_id>
-```
-
-Now install the packages based on the profile you choose. This will take a while.
-```
-# emerge --ask --update --deep --newuse @world
-```
-
-### 10. Configuring Timezone
+### 9. Configuring Timezone
 ```
 # ln -sf /usr/share/zoneinfo/Asia/Taiwan /etc/localtime
 # hwclock --systohc --utc
 ```
 
 
-### 11. Configuring Locale
+### 19. Configuring Locale
 Uncomment the locales you are going to use in /etc/locale.gen
 ```
 # locale-gen
@@ -204,7 +190,7 @@ Uncomment the locales you are going to use in /etc/locale.gen
 
 
 ## Compiling Kernel
-### 12. Emerge Kernel Source
+### 11. Emerge Kernel Source
 I use `genkernel` to configure the kernel with ease.
 ```
 # emerge --ask sys-kernel/gentoo-sources
@@ -240,7 +226,7 @@ Or if you want to manually configure everything, please refer to the [official w
 ```
 
 
-### 13. Bootloader
+### 12. Bootloader
 I'm using `systemd-boot` (formerly called gummiboot). This bootloader is already packaged with systemd.
 
 If you haven't installed it before, run
@@ -264,7 +250,7 @@ options crypt_root=/dev/sda2 root=/dev/mapper/vgcrypt-root root_trim=yes init=/u
 `dolvm` must be included in `options` to boot properly with LVM.
 
 
-### 14. Post Installation
+### 13. Post Installation
 Install `NetworkManager`, a convenient cli tool to manage your network connections.
 ```
 # emerge networkmanager -va
@@ -281,7 +267,7 @@ Reboot and check if everything works.
 ```
 
 
-### 15. Misc
+### 14. Miscellaneous
 Enable NetworkManager service.
 ```
 # systemctl enable NetworkManager
@@ -340,12 +326,50 @@ Install utilities
 emerge -av zsh vim gentoolkit`
 ```
 
+### 15. Selecting and Installing a Profile
+In my case, I'm using `KDE + i3-gaps` and `systemd`.
+I chose `[20]  default/linux/amd64/17.0/desktop/plasma/systemd (stable) *`
+```
+# emerge-webrsync
+# eselect profile list
+# eselect profile set <profile_id>
+```
+
+Now install the packages based on the profile you choose. This will take a while.
+```
+# emerge --ask --update --deep --newuse @world
+```
+
+Ensure the correct drivers are installed.
+```
+# emerge -av x11-base/xorg-drivers
+# emerge -av x11-base/xorg-server
+
+# emerge -av x11-drivers/xf86-video-intel
+# emerge -av x11-drivers/xf86-input-mtrack
+```
 
 
-* Wireless Driver:    
-(placeholder)
+### 16. Wireless Driver
+I have broadcom `BCM4360` chip, and this one is a motherfucker.
+```
+# lspci | grep Broadcom
+02:00.0 Network controller: Broadcom Limited BCM4360 802.11ac Wireless Network Adapter (rev 03)
+```
 
-* Selecting a profile:    
-(placeholder)
+To make this chip work, you have to install `broadcom-sta`. **Other drivers like `b43` does NOT work for me**. Make sure the correct kernel parameter is set according to [this wiki page](https://wiki.gentoo.org/wiki/Apple_Macbook_Pro_Retina_(early_2013)#Wireless). I recommend that you use my kernel config, since it is kind of complicated to make it works. Some kernel options must be turned off in order to successfully make `wl` module works, and those options have other options as their dependencies. I spend quite some time to hunt down every one of those options.
+```
+# emerge -av network-wireless/broadcom-sta
+```
 
-
+Load the module `wl`, and disable other modules that will interfere with it.
+```
+# nano /etc/modprobe.d/blacklist.conf
+```
+```
+blacklist b43
+blacklist sbb
+```
+```
+# modprobe wl
+```
