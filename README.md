@@ -10,8 +10,12 @@ This is my personal gentoo configuration on my MacbookPro 11,2. Feel free to use
 * Audio: `amixer`
 
 
+## Disclaimer
+The guide is provided "as is" without warranty of any kind, either expressed or implied, including, but not limited to, the implied warranties of correctness and relevance to a particular subject. The entire risk as to the quality and accuracy of the content is with you. Should the content prove substandard, you assume the cost of all necessary servicing, repair, or correction.
+
+
 ## Base System Installation
-### Preparing Installation Media
+### 1. Preparing Installation Media
 Download [the latest boot image](https://www.gentoo.org/downloads/) from www.gentoo.org. I recommend that you download the Hybrid ISO (LiveDVD) - 2GiB and boot from text mode. 
 After downloading the iso, insert a usb thumb drive and use `lsblk` to confirm the device path. Then run:
 ```
@@ -22,7 +26,7 @@ The above command will "write" the iso to your external hard drive from which we
 Generally speaking, `/dev/sda` should be the built in hard drive, while `/dev/sd{b..z}` should be external storages.
 
 
-### Partitioning Hard Drive
+### 2. Partitioning Hard Drive
 Note that throughout this guide, we will be using `LUKS on LVM`. If you prefer other partitioning schemes, please refer to other guides.
 Use `cfdisk`, `cgdisk`, `fdisk` or whatever tools you like to partition the drive. Then run:
 ```
@@ -42,20 +46,18 @@ After all these steps, my `lsblk` output is as follow:
 $ lsblk
 NAME                       MAJ:MIN RM   SIZE RO TYPE  MOUNTPOINT
 sda                          8:0    0 233.8G  0 disk
-├─sda1                       8:1    0   200M  0 part
-├─sda2                       8:2    0 232.9G  0 part
+├─sda1                       8:1    0   200M  0 part                --> EFI Partition
+├─sda2                       8:2    0 232.9G  0 part                --> Our Daily-use Partition
 │ └─root_sda2-vgcrypt-root 254:0    0 232.9G  0 crypt
 │   ├─vgcrypt-root         254:1    0    20G  0 lvm   /
 │   └─vgcrypt-home         254:2    0 212.9G  0 lvm   /home
-└─sda3                       8:3    0 619.9M  0 part
+└─sda3                       8:3    0 619.9M  0 part                --> Recovery HD
 sdb                          8:16   1 120.9G  0 disk
-└─sdb1                       8:17   1 120.9G  0 part
+└─sdb1                       8:17   1 120.9G  0 part                --> Live USB
 ```
 
-`sda1` is the EFI Partition. `sda2` is for daily use. `sda3` is the RecoveryHD.
 
-
-### Getting Internet Connection
+### 3. Getting Internet Connection
 I recommend using Ethernet here. Wireless Connection can somehow be tricky to configure (we will cover this later).
 Plugin a ethernet adapter with cable attached, and run:
 ```
@@ -66,7 +68,7 @@ If for whatever reason the connection cannot be established, run `pkill dhcpcd` 
 Use `ping -c 3 www.google.com` to check if the connection is working.
 
 
-### Mounting Partitions
+### 4. Mounting Partitions
 
 | Partition | Mount Point |
 | --- | --- |
@@ -81,7 +83,7 @@ Different from Arch Linux, we will mount /dev/mapper/vgcrypt-root on /mnt/gentoo
 ```
 
 
-### Base Installation
+### 5. Base Installation
 cd into `/mnt/gentoo` and retrieve a stage3 tarball. Then extract it:
 ```
 # cd /mnt/gentoo
@@ -98,7 +100,7 @@ rm portage-latest.*
 ```
 
 
-### Chrooting into the New System
+### 6. Chrooting into the New System
 First copy /etc/resolv.conf to /mnt/gentoo/etc/resolv.conf
 ```
 # cp -L /etc/resolv.conf /mnt/gentoo/etc/resolv.conf
@@ -120,7 +122,7 @@ Now we are ready to chroot into the new system
 ```
 
 
-### Editing /etc/fstab
+### 7. Automatically Mounting Partitions
 Edit `/etc/fstab`
 ```
 # nano /etc/fstab
@@ -129,7 +131,7 @@ Edit `/etc/fstab`
 /dev/mapper/vgcrypt-home	/home	ext4		rw,relatime,data=ordered,discard	0 2
 ```
 
-### Configuring the Compiler
+### 8. Configuring the Compiler
 Edit `/etc/portage/make.conf`. The following is the content of mine.
 ```
 # nano /etc/portage/make.conf
@@ -163,18 +165,69 @@ Note that it's `-O2`, not `-02`.
 Since we have an 8-core cpu, so core_number+1 = 9.
 
 
-### Selecting a Profile
-In my case, I'm using `KDE + i3-gaps`, so I chose `[20]  default/linux/amd64/17.0/desktop/plasma/systemd (stable) *`
+### 9. Selecting a Profile
+In my case, I'm using `KDE + i3-gaps` and `systemd`.
+So I chose `[20]  default/linux/amd64/17.0/desktop/plasma/systemd (stable) *`
 ```
-emerge-webrsync
-eselect profile list
-eselect profile set 20
+# emerge-webrsync
+# eselect profile list
+# eselect profile set <profile_id>
+```
+
+Now install the packages based on the profile you choose. This will take a while.
+```
+# emerge --ask --update --deep --newuse @world
+```
+
+### 10. Configuring Timezone
+```
+# ln -sf /usr/share/zoneinfo/Asia/Taiwan /etc/localtime
+# hwclock --systohc --utc
 ```
 
 
+### 11. Configuring Locale
+Uncomment the locales you are going to use in /etc/locale.gen
+```
+# locale-gen
+# eselect locale list
+# eselect locale set X (choose one)
+```
 
 
-## Post-Installation
+## Compiling Kernel
+### 12. Emerge Kernel Source
+I use `genkernel` to configure the kernel with ease.
+```
+# emerge --ask sys-kernel/gentoo-sources
+# echo "sys-kernel/genkernel-next cryptsetup" >> /etc/portage/package.use/genkernel-next
+# emerge -av sys-kernel/genkernel-next sys-fs/cryptsetup sys-fs/lvm2
+```
+
+Check /etc/genkernel.conf and set the following options.
+```
+MENU_CONFIG="yes"
+MRPROPER="no"
+MAKEOPTS="-j9"
+LVM="yes"
+LUKS="yes"
+DMRAID="no"
+BUSY_BOX="yes"
+UDEV="yes"
+MDADM="no"
+FIRMWARE="no"
+```
+
+**IMPORTANT** MOUNT `/dev/sda1` ON /BOOT BEFORE COMPILING THE KERNEL!
+```
+# mount /dev/sda1 /boot
+# genkernel all
+```
+
+You can use my kernel config by copying [it](https://raw.githubusercontent.com/aesophor/MacbookPro11-2-gentoo-config/master/usr/src/linux/.config) into /usr/src/linux/.config
+
+Or if you want to manually configure everything, please refer to the [official wiki](https://wiki.gentoo.org/wiki/Apple_Macbook_Pro_Retina_(early_2013)#Kernel).
+
 * Wireless Driver:    
 (placeholder)
 
