@@ -11,8 +11,7 @@ This is my personal gentoo configuration on my MacbookPro 11,2. Feel free to use
 
 
 ## Base System Installation
-
-* **Preparing Installation Media**    
+### Preparing Installation Media
 Download [the latest boot image](https://www.gentoo.org/downloads/) from www.gentoo.org. I recommend that you download the Hybrid ISO (LiveDVD) - 2GiB and boot from text mode. 
 After downloading the iso, insert a usb thumb drive and use `lsblk` to confirm the device path. Then run:
 ```
@@ -23,7 +22,7 @@ The above command will "write" the iso to your external hard drive from which we
 Generally speaking, `/dev/sda` should be the built in hard drive, while `/dev/sd{b..z}` should be external storages.
 
 
-* **Partitioning Hard Drive**    
+### Partitioning Hard Drive
 Note that throughout this guide, we will be using `LUKS on LVM`. If you prefer other partitioning schemes, please refer to other guides.
 Use `cfdisk`, `cgdisk`, `fdisk` or whatever tools you like to partition the drive. Then run:
 ```
@@ -56,7 +55,7 @@ sdb                          8:16   1 120.9G  0 disk
 `sda1` is the EFI Partition. `sda2` is for daily use. `sda3` is the RecoveryHD.
 
 
-* **Getting Internet Connection**    
+### Getting Internet Connection
 I recommend using Ethernet here. Wireless Connection can somehow be tricky to configure (we will cover this later).
 Plugin a ethernet adapter with cable attached, and run:
 ```
@@ -67,7 +66,7 @@ If for whatever reason the connection cannot be established, run `pkill dhcpcd` 
 Use `ping -c 3 www.google.com` to check if the connection is working.
 
 
-* **Mounting Partitions**    
+### Mounting Partitions
 
 | Partition | Mount Point |
 | --- | --- |
@@ -82,7 +81,7 @@ Different from Arch Linux, we will mount /dev/mapper/vgcrypt-root on /mnt/gentoo
 ```
 
 
-* **Base Installation**    
+### Base Installation
 cd into `/mnt/gentoo` and retrieve a stage3 tarball. Then extract it:
 ```
 # cd /mnt/gentoo
@@ -99,7 +98,7 @@ rm portage-latest.*
 ```
 
 
-* **Chrooting into the New System**    
+### Chrooting into the New System
 First copy /etc/resolv.conf to /mnt/gentoo/etc/resolv.conf
 ```
 # cp -L /etc/resolv.conf /mnt/gentoo/etc/resolv.conf
@@ -121,7 +120,7 @@ Now we are ready to chroot into the new system
 ```
 
 
-* **Editing /etc/fstab**    
+### Editing /etc/fstab
 Edit `/etc/fstab`
 ```
 # nano /etc/fstab
@@ -130,7 +129,7 @@ Edit `/etc/fstab`
 /dev/mapper/vgcrypt-home	/home	ext4		rw,relatime,data=ordered,discard	0 2
 ```
 
-* **Configuring the Compiler**    
+### Configuring the Compiler
 Edit `/etc/portage/make.conf`. The following is the content of mine.
 ```
 # nano /etc/portage/make.conf
@@ -164,10 +163,16 @@ Note that it's `-O2`, not `-02`.
 Since we have an 8-core cpu, so core_number+1 = 9.
 
 
+### Selecting a Profile
+In my case, I'm using `KDE + i3-gaps`, so I chose `[20]  default/linux/amd64/17.0/desktop/plasma/systemd (stable) *`
+```
+emerge-webrsync
+eselect profile list
+eselect profile set 20
+```
 
 
 
-  [20]  default/linux/amd64/17.0/desktop/plasma/systemd (stable) *
 
 ## Post-Installation
 * Wireless Driver:    
