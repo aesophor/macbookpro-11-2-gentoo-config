@@ -1,37 +1,40 @@
 ## Synopsis
-This is my personal gentoo configuration on my MacbookPro 11,2. Feel free to use it.
+My personal gentoo configuration on my MacbookPro 11,2. Feel free to use it.
 
-* Model: `MacbookPro 11,2 (Late 2014)`
-* Kernel: `4.9.76-gentoo-r1`
-* Disk Encryption: `Yes (LUKS on LVM)`
-* Bootloader: `systemd-boot`
-* Wireless: `broadcom-sta`
-* Graphics: `xf86-video-intel`
-* Backlight: `light, kbdlight`
-* Audio: `amixer`
+| Item | Detail |
+| --- | --- |
+| Model | MacbookPro 11,2 (Late 2014) |
+| Kernel | 4.9.76-gentoo-r1 |
+| Disk Encryption | LUKS on LVM |
+| Bootloader | systemd-boot |
+| Wireless | broadcom-sta |
+| Graphics | xf86-video-intel |
+| Backlight | light, kbdlight |
+| Audio | amixer |
 
 
 ## Disclaimer
 The guide is provided "as is" without warranty of any kind, either expressed or implied, including, but not limited to, the implied warranties of correctness and relevance to a particular subject. The entire risk as to the quality and accuracy of the content is with you. Should the content prove substandard, you assume the cost of all necessary servicing, repair, or correction.
 
-**Should this guide miss anything important or stated something wrong, please tell me at once. I'll corrected it as soon as possible.**
+**Should this guide miss anything important or stated something wrong, please tell me at once. I'll corrected it ASAP.**
 
 
 # Gentoo Installation Guide
 
 ## Base System Installation
 ### 1. Preparing Installation Media
-Download [the latest boot image](https://www.gentoo.org/downloads/) from www.gentoo.org. I recommend that you download the Hybrid ISO (LiveDVD) - 2GiB and boot from text mode. 
-After downloading the iso, insert a usb thumb drive and use `lsblk` to confirm the device path. Then run:
+Download the [latest boot image](https://www.gentoo.org/downloads/). I recommend that you download the `Hybrid ISO (LiveDVD) - 2GiB` and boot in text mode. 
+After downloading the iso, insert an **UNUSED** USB thumb drive and use `lsblk` to confirm the device path. Then run:
 ```
 # dd if=/path/to/the/iso of=/dev/sdc bs=4M
 ```
 
-The above command will "write" the iso to your external hard drive from which we will be able to boot later.
+**The above command will destroy its original data**, and "write" the iso to your external hard drive from which we will be able to boot later.
 Generally speaking, `/dev/sda` should be the built in hard drive, while `/dev/sd{b..z}` should be external storages.
 
 Shutdown your Macbook. Now hold the `alt/option` key and press the `power` button. Wait a few second until the boot entry shows up, and select the correct one to boot from.
 
+Make sure that you boot in text mode(there should be an option).
 The default font size is just too small to read. To make the font bigger
 ```
 # setfont sun12x22
@@ -86,7 +89,6 @@ Use `ping -c 3 www.google.com` to check if the connection is working.
 | /dev/mapper/vgcrypt-root | /mnt/gentoo |
 | /dev/mapper/vgcrypt-home | /mnt/gentoo/home |
 
-Different from Arch Linux, we will mount /dev/mapper/vgcrypt-root on /mnt/gentoo. Run:
 ```
 # mount /dev/mapper/vgcrypt-root /mnt/gentoo
 # mkdir -p /mnt/gentoo/home
@@ -134,7 +136,7 @@ Now we are ready to chroot into the new system
 
 
 ### 7. Automatically Mounting Partitions
-Edit `/etc/fstab`
+Edit `/etc/fstab`:
 ```
 # nano /etc/fstab
 ```
@@ -195,28 +197,41 @@ Uncomment the locales you are going to use in /etc/locale.gen
 
 
 ### 11. Wireless Driver
-I have broadcom `BCM4360` chip, and this one is a motherfucker.
+I have broadcom `BCM4360` chip. The process of configuration is a pain in the ass. You have two options:
+
+1. Just take my kernel config,and follow my guide. (**recommended**)
+2. Manual configuration.
+
+The latter options requires you to disable certain kernel options, while each of these options has many other options as dependencies. Hence, I recommend that you just take my config.
+
+Check your broadcom chip version.
 ```
 # lspci | grep Broadcom
 02:00.0 Network controller: Broadcom Limited BCM4360 802.11ac Wireless Network Adapter (rev 03)
 ```
-**TL;DR:**  Honestly, I've forgotten the details regarding configuring this wireless chip. So I recommend that you just take my config. This way would save you a lot of time.
 
-To make this chip work, you have to install `broadcom-sta`. **Other drivers like `b43` does NOT work for me**. Make sure the correct kernel parameter is set according to [this wiki page](https://wiki.gentoo.org/wiki/Apple_Macbook_Pro_Retina_(early_2013)#Wireless). I recommend that you use my kernel config, since it is kind of complicated to make it works. 
+If you have this chip, install `broadcom-sta`. **The open-source version (e.g., `b43`) does NOT work for me**.
+Also make sure the correct kernel parameter is set according to [this wiki page](https://wiki.gentoo.org/wiki/Apple_Macbook_Pro_Retina_(early_2013)#Wireless).
 
-Some kernel options must be turned off in order to successfully make `wl` module works, and those options have other options as their dependencies. You will also need to disable `b43`, `sbb` ...etc. I spend quite some time to hunt down every one of those options.
+Install the closed-source driver `broadcom-sta`. 
+Remap kernel modules, remove all wireless modules and reload `wl`.
 ```
-# emerge -av network-wireless/broadcom-sta
+# emerge -av net-wireless/broadcom-sta
+
+# depmod –a
+# rmmod b43
+# rmmod ssb
+# rmmod wl
+# modprobe wl
 ```
 
-Load the module `wl`, and disable other modules that will interfere with it.
+Blacklist other modules that will interfere with `wl` upon loading kernel.
 ```
 # nano /etc/modprobe.d/blacklist.conf
 ```
+```
 blacklist b43
 blacklist sbb
-```
-# modprobe wl
 ```
 
 
@@ -398,6 +413,7 @@ For further customizations, please check my [dotfiles](https://www.github.com/ae
 * [Apple Macbook Pro Retina (early 2013) - Gentoo Wiki](https://wiki.gentoo.org/wiki/Apple_Macbook_Pro_Retina_(early_2013))
 * [Installing Gentoo on Macbook Pro](https://vitobotta.com/2016/10/10/install-gentoo-on-macbook-pro/)
 * [Gentoo on MacBook Pro Retina Part 1: Base System](https://www.artembutusov.com/gentoo-on-macbook-pro-retina-part-1-base-system/)
+* [Gentoo无线网卡安装之broadcom-sta（wl）篇（三）](http://blog.csdn.net/beijing2008lm/article/details/18980097)
 
 
 ## License
