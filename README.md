@@ -4,6 +4,7 @@ This is my personal gentoo configuration on my MacbookPro 11,2. Feel free to use
 * Model: `MacbookPro 11,2 (Late 2014)`
 * Kernel: `4.9.76-gentoo-r1`
 * Disk Encryption: `Yes (LUKS on LVM)`
+* Bootloader: `systemd-boot`
 * Wireless: `broadcom-sta`
 * Graphics: `xf86-video-intel`
 * Backlight: `light, kbdlight`
