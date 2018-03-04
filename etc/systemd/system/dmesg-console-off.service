@@ -1,0 +1,11 @@
+# /etc/systemd/system/dmesg-console-off.service
+
+[Unit]
+Description=Disable printing of kernel messages to console
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c "echo 0 > /proc/sys/kernel/printk"
+
+[Install]
+WantedBy=multi-user.target

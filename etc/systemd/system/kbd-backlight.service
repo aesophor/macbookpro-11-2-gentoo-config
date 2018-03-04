@@ -1,0 +1,12 @@
+# /etc/systemd/system/kbd-backlight.service
+
+[Unit]
+Description=Enable keyboard backlight upon boot on linux.
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c "echo "1000" > /sys/class/leds/smc\:\:kbd_backlight/brightness"
+
+[Install]
+WantedBy=multi-user.target
+

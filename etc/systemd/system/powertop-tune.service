@@ -1,0 +1,11 @@
+# /etc/systemd/system/powertop-tune.service
+
+[Unit]
+Description=Powertop autotune.
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/powertop-tune.sh
+
+[Install]
+WantedBy=multi-user.target
