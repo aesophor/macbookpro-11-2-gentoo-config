@@ -188,7 +188,7 @@ Since we have an 8-core cpu, so core_number+1 = 9.
 
 
 ### 10. Configuring Locale
-Uncomment the locales you are going to use in /etc/locale.gen
+Uncomment the locales you are going to use in `/etc/locale.gen`. Then run:
 ```
 # locale-gen
 # eselect locale list
@@ -210,11 +210,11 @@ Check your broadcom chip version.
 02:00.0 Network controller: Broadcom Limited BCM4360 802.11ac Wireless Network Adapter (rev 03)
 ```
 
-If you have this chip, install `broadcom-sta`. **The open-source version (e.g., `b43`) does NOT work for me**.
+If you have this chip, install `broadcom-sta`. **The open-source version (e.g., b43) does NOT work for me**.
 Also make sure the correct kernel parameter is set according to [this wiki page](https://wiki.gentoo.org/wiki/Apple_Macbook_Pro_Retina_(early_2013)#Wireless).
 
-Install the closed-source driver `broadcom-sta`. 
-Remap kernel modules, remove all wireless modules and reload `wl`.
+Install the closed-source driver `broadcom-sta`,
+remap kernel modules, remove all wireless modules and reload `wl`.
 ```
 # emerge -av net-wireless/broadcom-sta
 
