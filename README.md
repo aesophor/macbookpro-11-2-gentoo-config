@@ -180,7 +180,7 @@ Since we have an 8-core cpu, so core_number+1 = 9.
 ```
 
 
-### 19. Configuring Locale
+### 10. Configuring Locale
 Uncomment the locales you are going to use in /etc/locale.gen
 ```
 # locale-gen
@@ -189,8 +189,34 @@ Uncomment the locales you are going to use in /etc/locale.gen
 ```
 
 
+### 11. Wireless Driver
+I have broadcom `BCM4360` chip, and this one is a motherfucker.
+```
+# lspci | grep Broadcom
+02:00.0 Network controller: Broadcom Limited BCM4360 802.11ac Wireless Network Adapter (rev 03)
+```
+**TL;DR:**  Honestly, I've forgotten the details regarding configuring this wireless chip. So I recommend that you just take my config. This way would save you a lot of time.
+
+To make this chip work, you have to install `broadcom-sta`. **Other drivers like `b43` does NOT work for me**. Make sure the correct kernel parameter is set according to [this wiki page](https://wiki.gentoo.org/wiki/Apple_Macbook_Pro_Retina_(early_2013)#Wireless). I recommend that you use my kernel config, since it is kind of complicated to make it works. 
+
+Some kernel options must be turned off in order to successfully make `wl` module works, and those options have other options as their dependencies. You will also need to disable `b43`, `sbb` ...etc. I spend quite some time to hunt down every one of those options.
+```
+# emerge -av network-wireless/broadcom-sta
+```
+
+Load the module `wl`, and disable other modules that will interfere with it.
+```
+# nano /etc/modprobe.d/blacklist.conf
+```
+blacklist b43
+blacklist sbb
+```
+# modprobe wl
+```
+
+
 ## Compiling Kernel
-### 11. Emerge Kernel Source
+### 12. Emerge Kernel Source
 I use `genkernel` to configure the kernel with ease.
 ```
 # emerge --ask sys-kernel/gentoo-sources
@@ -226,7 +252,7 @@ Or if you want to manually configure everything, please refer to the [official w
 ```
 
 
-### 12. Bootloader
+### 13. Bootloader
 I'm using `systemd-boot` (formerly called gummiboot). This bootloader is already packaged with systemd.
 
 If you haven't installed it before, run
@@ -250,7 +276,7 @@ options crypt_root=/dev/sda2 root=/dev/mapper/vgcrypt-root root_trim=yes init=/u
 `dolvm` must be included in `options` to boot properly with LVM.
 
 
-### 13. Post Installation
+### 14. Post Installation
 Install `NetworkManager`, a convenient cli tool to manage your network connections.
 ```
 # emerge networkmanager -va
@@ -267,7 +293,7 @@ Reboot and check if everything works.
 ```
 
 
-### 14. Miscellaneous
+### 15. Miscellaneous
 Enable NetworkManager service.
 ```
 # systemctl enable NetworkManager
@@ -326,7 +352,7 @@ Install utilities
 emerge -av zsh vim gentoolkit`
 ```
 
-### 15. Selecting and Installing a Profile
+### 16. Selecting and Installing a Profile
 In my case, I'm using `KDE + i3-gaps` and `systemd`.
 I chose `[20]  default/linux/amd64/17.0/desktop/plasma/systemd (stable) *`
 ```
@@ -349,27 +375,4 @@ Ensure the correct drivers are installed.
 # emerge -av x11-drivers/xf86-input-mtrack
 ```
 
-
-### 16. Wireless Driver
-I have broadcom `BCM4360` chip, and this one is a motherfucker.
-```
-# lspci | grep Broadcom
-02:00.0 Network controller: Broadcom Limited BCM4360 802.11ac Wireless Network Adapter (rev 03)
-```
-
-To make this chip work, you have to install `broadcom-sta`. **Other drivers like `b43` does NOT work for me**. Make sure the correct kernel parameter is set according to [this wiki page](https://wiki.gentoo.org/wiki/Apple_Macbook_Pro_Retina_(early_2013)#Wireless). I recommend that you use my kernel config, since it is kind of complicated to make it works. Some kernel options must be turned off in order to successfully make `wl` module works, and those options have other options as their dependencies. I spend quite some time to hunt down every one of those options.
-```
-# emerge -av network-wireless/broadcom-sta
-```
-
-Load the module `wl`, and disable other modules that will interfere with it.
-```
-# nano /etc/modprobe.d/blacklist.conf
-```
-```
-blacklist b43
-blacklist sbb
-```
-```
-# modprobe wl
-```
+### 17. Finishing up
