@@ -213,8 +213,7 @@ Check your broadcom chip version.
 If you have this chip, install `broadcom-sta`. **The open-source version (e.g., b43) does NOT work for me**.
 Also make sure the correct kernel parameter is set according to [this wiki page](https://wiki.gentoo.org/wiki/Apple_Macbook_Pro_Retina_(early_2013)#Wireless).
 
-Install the closed-source driver `broadcom-sta`,
-remap kernel modules, remove all wireless modules and reload `wl`.
+Install the closed-source driver `broadcom-sta`, remap kernel modules, remove all wireless modules and reload `wl`.
 ```
 # emerge -av net-wireless/broadcom-sta
 
@@ -261,7 +260,7 @@ MDADM="no"
 FIRMWARE="no"
 ```
 
-**IMPORTANT: ** Mount `/dev/sda1` on /boot before compiling the kernel.
+**IMPORTANT:** Mount `/dev/sda1` on /boot before compiling the kernel.
 You can use my kernel config by copying [it](https://raw.githubusercontent.com/aesophor/MacbookPro11-2-gentoo-config/master/usr/src/linux/.config) into /usr/src/linux/.config
 
 Or if you want to manually configure everything, please refer to the [official wiki](https://wiki.gentoo.org/wiki/Apple_Macbook_Pro_Retina_(early_2013)#Kernel).
@@ -273,14 +272,14 @@ Or if you want to manually configure everything, please refer to the [official w
 
 
 ### 13. Bootloader
-I'm using `systemd-boot` (formerly called gummiboot). This bootloader is already packaged with systemd.
+I'm using `systemd-boot` (formerly called gummiboot). This bootloader is already packaged with systemd, so no additional package is required.
 
 If you haven't installed it before, run
 ```
 # bootctl --path=/boot install
 ```
 
-Then create bootloader entry. Make sure you've typed everything correctly, else it wouldn't boot properly.
+Then create a bootloader entry. Make sure you've typed everything correctly, else it wouldn't boot properly.
 ```
 # nano /boot/loader/entries/gentoo.conf
 ```
@@ -293,7 +292,7 @@ options crypt_root=/dev/sda2 root=/dev/mapper/vgcrypt-root root_trim=yes init=/u
 ```
 
 `acpi_osi= acpi_mask_gpe=0x06` is an option to suppress the infamous gpe06, an interrupt that goes crazy on Macbooks.
-`dolvm` must be included in `options` to boot properly with LVM.
+`dolvm` **must** be included in `options` to boot properly with LVM.
 
 
 ### 14. Post Installation
