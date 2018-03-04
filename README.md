@@ -25,6 +25,12 @@ $ dd if=/path/to/the/iso of=/dev/sdc bs=4M
 The above command will "write" the iso to your external hard drive from which we will be able to boot later.
 Generally speaking, `/dev/sda` should be the built in hard drive, while `/dev/sd{b..z}` should be external storages.
 
+Shutdown your Macbook. Now hold the `alt/option` key and press the `power` button. Wait a few second until the boot entry shows up, and select the correct one to boot from.
+
+The default font size is just too small to read. To make the font bigger
+```
+# setfont sun12x22
+```
 
 ### 2. Partitioning Hard Drive
 Note that throughout this guide, we will be using `LUKS on LVM`. If you prefer other partitioning schemes, please refer to other guides.
@@ -126,7 +132,8 @@ Now we are ready to chroot into the new system
 Edit `/etc/fstab`
 ```
 # nano /etc/fstab
-
+```
+```
 /dev/mapper/vgcrypt-root	/	ext4		rw,relatime,data=ordered,discard	0 1
 /dev/mapper/vgcrypt-home	/home	ext4		rw,relatime,data=ordered,discard	0 2
 ```
@@ -135,7 +142,8 @@ Edit `/etc/fstab`
 Edit `/etc/portage/make.conf`. The following is the content of mine.
 ```
 # nano /etc/portage/make.conf
-
+```
+```
 CFLAGS="-march=native -O2 -pipe"
 CXXFLAGS="${CFLAGS}"
 CHOST="x86_64-pc-linux-gnu"
@@ -206,6 +214,9 @@ I use `genkernel` to configure the kernel with ease.
 
 Check /etc/genkernel.conf and set the following options.
 ```
+# nano /etc/genkernel.conf
+```
+```
 MENU_CONFIG="yes"
 MRPROPER="no"
 MAKEOPTS="-j9"
@@ -218,15 +229,118 @@ MDADM="no"
 FIRMWARE="no"
 ```
 
-**IMPORTANT** MOUNT `/dev/sda1` ON /BOOT BEFORE COMPILING THE KERNEL!
+**IMPORTANT: ** Mount `/dev/sda1` on /boot before compiling the kernel.
+You can use my kernel config by copying [it](https://raw.githubusercontent.com/aesophor/MacbookPro11-2-gentoo-config/master/usr/src/linux/.config) into /usr/src/linux/.config
+
+Or if you want to manually configure everything, please refer to the [official wiki](https://wiki.gentoo.org/wiki/Apple_Macbook_Pro_Retina_(early_2013)#Kernel).
+
 ```
 # mount /dev/sda1 /boot
 # genkernel all
 ```
 
-You can use my kernel config by copying [it](https://raw.githubusercontent.com/aesophor/MacbookPro11-2-gentoo-config/master/usr/src/linux/.config) into /usr/src/linux/.config
 
-Or if you want to manually configure everything, please refer to the [official wiki](https://wiki.gentoo.org/wiki/Apple_Macbook_Pro_Retina_(early_2013)#Kernel).
+### 13. Bootloader
+I'm using `systemd-boot` (formerly called gummiboot). This bootloader is already packaged with systemd.
+
+If you haven't installed it before, run
+```
+# bootctl --path=/boot install
+```
+
+Then create bootloader entry. Make sure you've typed everything correctly, else it wouldn't boot properly.
+```
+# nano /boot/loader/entries/gentoo.conf
+```
+```
+# /boot/loader/entries/gentoo.conf
+title Gentoo Linux
+linux /kernel-genkernel-x86_64-4.9.76-gentoo-r1
+initrd /initramfs-genkernel-x86_64-4.9.76-gentoo-r1
+options crypt_root=/dev/sda2 root=/dev/mapper/vgcrypt-root root_trim=yes init=/usr/lib/systemd/systemd acpi_osi= acpi_mask_gpe=0x06 rw dolvm 
+```
+
+`acpi_osi= acpi_mask_gpe=0x06` is an option to suppress the infamous gpe06, an interrupt that goes crazy on Macbooks.
+`dolvm` must be included in `options` to boot properly with LVM.
+
+
+### 14. Post Installation
+Install `NetworkManager`, a convenient cli tool to manage your network connections.
+```
+# emerge networkmanager -va
+```
+
+Change root password.
+```
+# passwd
+```
+
+Reboot and check if everything works.
+```
+# reboot
+```
+
+
+### 15. Misc
+Enable NetworkManager service.
+```
+# systemctl enable NetworkManager
+# systemctl start NetworkManager
+```
+
+Set hostname.
+```
+# echo "Veil" > /etc/hostname
+```
+
+Edit host file.
+```
+# nano /etc/hosts
+```
+```
+127.0.0.1	Veil.local	Veil	localhost
+::1		Veil.local	Veil	localhost
+```
+
+Fix printk noise.
+```
+# nano /etc/systemd/system/dmesg-console-off.service
+```
+```
+# /etc/systemd/system/dmesg-console-off.service
+
+[Unit]
+Description=Disable printing of kernel messages to console
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c "echo 0 > /proc/sys/kernel/printk"
+
+[Install]
+WantedBy=multi-user.target
+```
+```
+# systemctl enable dmesg-console-off.service
+```
+
+Add a user.
+```
+useradd --create-home --groups wheel --shell /bin/bash aesophor
+passwd aesophor
+```
+
+Setup sudo.
+```
+emerge -av sudo
+```
+Then uncomment `%wheel ALL=(ALL) ALL`.
+
+Install utilities
+```
+emerge -av zsh vim gentoolkit`
+```
+
+
 
 * Wireless Driver:    
 (placeholder)
