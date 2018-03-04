@@ -375,4 +375,25 @@ Ensure the correct drivers are installed.
 # emerge -av x11-drivers/xf86-input-mtrack
 ```
 
+Then copy my config /etc/X11/xorg.conf and /etc/X11/xorg.conf.d/*
+
+
 ### 17. Finishing up
+Now you only need to edit ~/.xinitrc before you type `startx`. If you have already installed the package `kde-plasma/plasma-desktop` (minimal desktop) or `kde-plasma/plasma-meta` (full desktop environment), then add this as the last line of ~/.xinitrc
+```
+exec startkde
+```
+
+Then `startx`. Congratulations.
+
+For further customizations, please check my [dotfiles](https://www.github.com/aesophor/dotfiles). Feel free to use them, this would save you some time.
+
+
+## References
+* [Apple Macbook Pro Retina (early 2013) - Gentoo Wiki](https://wiki.gentoo.org/wiki/Apple_Macbook_Pro_Retina_(early_2013))
+* [Installing Gentoo on Macbook Pro](https://vitobotta.com/2016/10/10/install-gentoo-on-macbook-pro/)
+* [Gentoo on MacBook Pro Retina Part 1: Base System](https://www.artembutusov.com/gentoo-on-macbook-pro-retina-part-1-base-system/)
+
+
+## License
+Available under the [MIT License](https://github.com/aesophor/MacbookPro11-2-gentoo-config/blob/master/LICENSE).
