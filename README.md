@@ -16,6 +16,8 @@ The guide is provided "as is" without warranty of any kind, either expressed or 
 **Should this guide miss anything important or stated something wrong, please tell me at once. I'll corrected it as soon as possible.**
 
 
+# Gentoo Installation Guide
+
 ## Base System Installation
 ### 1. Preparing Installation Media
 Download [the latest boot image](https://www.gentoo.org/downloads/) from www.gentoo.org. I recommend that you download the Hybrid ISO (LiveDVD) - 2GiB and boot from text mode. 
