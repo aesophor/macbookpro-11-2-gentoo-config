@@ -408,11 +408,31 @@ Then `startx`. Congratulations.
 For further customizations, please check my [dotfiles](https://www.github.com/aesophor/dotfiles). Feel free to use them, this would save you some time.
 
 
+### 18. mini DisplayPort to VGA
+This one is a motherfucker. When I plugin a miniDP-VGA adapter and run `dmesg`, I always got the following
+```
+[45075.649633] thunderbolt 0000:07:00.0: resetting error on 0:c.
+[45075.649692] thunderbolt 0000:07:00.0: 0:c: got unplug event for disconnected port, ignoring
+```
+
+which indicates that plug/unplug events are inverted.
+
+However, this message is misleading. You can simply force VGA output over miniDP by running
+```
+xrandr --output eDP1 --mode 1280x800
+xrandr --addmode DP1 1280x800
+xrandr --output DP1 --mode 1280x800 --same-as eDP1
+```
+
+Cheers! The projector should now mirrors your retina display!
+
+
 ## References
 * [Apple Macbook Pro Retina (early 2013) - Gentoo Wiki](https://wiki.gentoo.org/wiki/Apple_Macbook_Pro_Retina_(early_2013))
 * [Installing Gentoo on Macbook Pro](https://vitobotta.com/2016/10/10/install-gentoo-on-macbook-pro/)
 * [Gentoo on MacBook Pro Retina Part 1: Base System](https://www.artembutusov.com/gentoo-on-macbook-pro-retina-part-1-base-system/)
 * [Gentoo无线网卡安装之broadcom-sta（wl）篇（三）](http://blog.csdn.net/beijing2008lm/article/details/18980097)
+* [Forcing VGA output over Mini DisplayPort in Linux](http://www.thattommyhall.com/2016/02/22/forcing-vga-output-in-linux/)
 
 
 ## License
