@@ -417,6 +417,11 @@ This one is a motherfucker. When I plugin a miniDP-VGA adapter and run `dmesg`, 
 
 which indicates that plug/unplug events are inverted.
 
+What's worse, `xrandr` insists that the adpater is not connected.
+```
+DP1 disconnected (normal left inverted right x axis y axis)
+```
+
 However, this message is misleading. You can simply force VGA output over miniDP by running
 ```
 xrandr --output eDP1 --mode 1280x800
