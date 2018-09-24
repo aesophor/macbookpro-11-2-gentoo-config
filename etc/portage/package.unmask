@@ -1,0 +1,27 @@
+# required by =fontawesome-5.0.6 (argument)
+# /usr/portage/profiles/package.mask:
+# Patrice Clement <monsieurp@gentoo.org> (26 Jan 2018)
+# Has different symbols. Known to cause issues with i3bar/swaybar.
+=media-fonts/fontawesome-5.0.6
+# required by broadcom-sta (argument)
+# /usr/portage/profiles/package.mask:
+# Pacho Ramos <pacho@gentoo.org> (13 Mar 2018)
+# Dead driver and with many incompatibilities with current kernels (#517250,
+# #523356, #551834, #646106). Removal in a month. Possible alternative
+# #device/driver: https://bugs.gentoo.org/517250#c5
+=net-wireless/broadcom-sta-6.30.223.271-r4
+# required by =app-emulation/wine-staging-2.17-r1 (argument)
+# /etc/portage/package.mask:
+=app-emulation/wine-staging-2.17-r1
+# required by =dev-lang/ruby-2.2.10 (argument)
+# /usr/portage/profiles/package.mask:
+# Hans de Graaff <graaff@gentoo.org> (27 Apr 2018)
+# No longer supported upstream. Use ruby23 instead.
+# Masked for removal in 30 days. Bug #642258.
+=dev-lang/ruby-2.2.10
+# required by @__auto_slot_operator_replace_installed__ (argument)
+# /etc/portage/package.mask:
+=dev-lang/php-5.6.36
+# required by =wine-staging-3.13-r1 (argument)
+# /etc/portage/package.mask:
+=app-emulation/wine-staging-3.13-r1

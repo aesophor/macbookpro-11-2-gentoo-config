@@ -1,0 +1,889 @@
+# required by media-sound/pulseaudio-11.1::gentoo[alsa,alsa-plugin]
+# required by media-sound/pavucontrol-3.0::gentoo
+# required by pavucontrol (argument)
+>=media-plugins/alsa-plugins-1.1.1-r1 pulseaudio
+# required by app-misc/neofetch-3.3.0::gentoo[X]
+# required by neofetch (argument)
+>=www-client/w3m-0.5.3-r9 imlib
+# required by kde-plasma/plasma-workspace-5.11.5::gentoo[systemd]
+# required by virtual/notification-daemon-0::gentoo[kde]
+# required by x11-libs/libnotify-0.7.7::gentoo
+# required by media-video/vlc-2.2.8-r1::gentoo[libnotify]
+# required by media-libs/phonon-vlc-0.9.1-r1::gentoo
+# required by media-libs/phonon-4.9.1-r1::gentoo[vlc]
+# required by kde-frameworks/kdelibs-4.14.37::gentoo
+# required by kde-plasma/breeze-5.11.5::gentoo[qt4]
+# required by kde-plasma/kwin-5.11.5::gentoo
+# required by kde-plasma/plasma-desktop-5.11.5::gentoo
+# required by kde-plasma/plasma-desktop (argument)
+>=sys-apps/dbus-1.10.18 user-session
+# required by www-client/chromium-63.0.3239.132::gentoo
+# required by chromium (argument)
+>=dev-libs/libxml2-2.9.7 icu
+# required by www-client/chromium-63.0.3239.132::gentoo
+# required by chromium (argument)
+>=media-libs/harfbuzz-1.7.2 icu
+# required by dev-java/netbeans-platform-8.2::gentoo
+# required by dev-java/netbeans-java-8.2-r1::gentoo
+# required by dev-util/netbeans-8.2::gentoo[netbeans_modules_java]
+# required by netbeans (argument)
+>=dev-java/junit-4.12-r1 source
+# required by dev-java/netbeans-platform-8.2::gentoo
+# required by dev-java/netbeans-java-8.2-r1::gentoo
+# required by dev-util/netbeans-8.2::gentoo[netbeans_modules_java]
+# required by netbeans (argument)
+>=dev-java/swing-layout-1.0.4-r1 source
+# required by x11-libs/libXi-1.7.9::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[X]
+# required by wine-staging (argument)
+>=x11-libs/libXfixes-5.0.3 abi_x86_32
+# required by virtual/pkgconfig-0-r1::gentoo
+# required by net-libs/gnutls-3.5.15::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[ssl]
+# required by wine-staging (argument)
+>=dev-util/pkgconfig-0.29.2 abi_x86_32
+# required by media-libs/fontconfig-2.12.4::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[fontconfig]
+# required by wine-staging (argument)
+>=media-libs/freetype-2.8 abi_x86_32
+# required by dev-libs/nettle-3.3-r2::gentoo[gmp]
+# required by net-libs/gnutls-3.5.15::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[ssl]
+# required by wine-staging (argument)
+>=dev-libs/gmp-6.1.2 abi_x86_32
+# required by x11-libs/libxcb-1.12-r2::gentoo
+# required by x11-libs/libX11-1.6.5::gentoo
+# required by x11-libs/libXxf86vm-1.1.4::gentoo
+# required by media-libs/mesa-17.2.8::gentoo
+# required by virtual/opengl-7.0-r1::gentoo
+# required by media-libs/glu-9.0.0-r1::gentoo
+# required by virtual/glu-9.0-r1::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[opengl]
+# required by wine-staging (argument)
+>=x11-libs/libXdmcp-1.1.2-r1 abi_x86_32
+# required by sys-devel/llvm-5.0.1::gentoo[libffi]
+# required by media-libs/mesa-17.2.8::gentoo[llvm,-video_cards_r600,-opencl,-video_cards_radeonsi,-video_cards_radeon]
+# required by virtual/opengl-7.0-r1::gentoo
+# required by media-libs/glu-9.0.0-r1::gentoo
+# required by virtual/glu-9.0-r1::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[opengl]
+# required by wine-staging (argument)
+>=virtual/libffi-3.0.13-r1 abi_x86_32
+# required by sys-libs/pam-1.2.1-r2::gentoo[cracklib]
+# required by virtual/pam-0-r1::gentoo
+# required by sys-apps/systemd-236-r5::gentoo[pam]
+# required by virtual/libudev-232::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[udev]
+# required by wine-staging (argument)
+>=sys-libs/cracklib-2.9.6-r1 abi_x86_32
+# required by media-libs/mesa-17.2.8::gentoo
+# required by virtual/opengl-7.0-r1::gentoo
+# required by media-libs/glu-9.0.0-r1::gentoo
+# required by virtual/glu-9.0-r1::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[opengl]
+# required by wine-staging (argument)
+>=x11-proto/xf86driproto-2.1.1-r1 abi_x86_32
+# required by dev-libs/glib-2.52.3::gentoo
+# required by dev-util/pkgconfig-0.29.2::gentoo[-internal-glib]
+# required by virtual/pkgconfig-0-r1::gentoo
+# required by net-libs/gnutls-3.5.15::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[ssl]
+# required by wine-staging (argument)
+>=virtual/libiconv-0-r2 abi_x86_32
+# required by media-libs/mesa-17.2.8::gentoo
+# required by virtual/opengl-7.0-r1::gentoo
+# required by media-libs/glu-9.0.0-r1::gentoo
+# required by virtual/glu-9.0-r1::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[opengl]
+# required by wine-staging (argument)
+>=x11-libs/libXext-1.3.3 abi_x86_32
+# required by virtual/opengl-7.0-r1::gentoo
+# required by media-libs/glu-9.0.0-r1::gentoo
+# required by virtual/glu-9.0-r1::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[opengl]
+# required by wine-staging (argument)
+>=media-libs/mesa-17.2.8 abi_x86_32
+# required by app-emulation/wine-staging-2.21::gentoo[png]
+# required by wine-staging (argument)
+>=media-libs/libpng-1.6.29 abi_x86_32
+# required by app-emulation/wine-staging-2.21::gentoo[alsa]
+# required by wine-staging (argument)
+>=media-libs/alsa-lib-1.1.2 abi_x86_32
+# required by sys-libs/gpm-1.20.7-r2::gentoo
+# required by www-client/links-2.14::gentoo[-livecd,gpm]
+# required by @selected
+# required by @world (argument)
+>=sys-libs/ncurses-6.0-r1 abi_x86_32
+# required by net-print/cups-2.1.4::gentoo[ssl]
+# required by app-emulation/wine-staging-2.21::gentoo[cups]
+# required by wine-staging (argument)
+>=dev-libs/libgcrypt-1.8.1 abi_x86_32
+# required by app-emulation/wine-staging-2.21::gentoo[fontconfig]
+# required by wine-staging (argument)
+>=media-libs/fontconfig-2.12.4 abi_x86_32
+# required by net-print/cups-2.1.4::gentoo[ssl]
+# required by app-emulation/wine-staging-2.21::gentoo[cups]
+# required by wine-staging (argument)
+>=net-libs/gnutls-3.5.15 abi_x86_32
+# required by sys-libs/pam-1.2.1-r2::gentoo
+# required by virtual/pam-0-r1::gentoo
+# required by sys-apps/systemd-236-r5::gentoo[pam]
+# required by virtual/libudev-232::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[udev]
+# required by wine-staging (argument)
+>=sys-devel/flex-2.6.4-r1 abi_x86_32
+# required by dev-libs/libxml2-2.9.7::gentoo
+# required by sys-devel/gettext-0.19.8.1::gentoo
+# required by dev-libs/libgpg-error-1.27-r1::gentoo[nls]
+# required by dev-libs/libgcrypt-1.8.1::gentoo
+# required by dev-libs/libxslt-1.1.30-r2::gentoo[crypt]
+# required by app-emulation/wine-staging-2.21::gentoo[xml]
+# required by wine-staging (argument)
+>=sys-libs/zlib-1.2.11-r1 abi_x86_32
+# required by media-libs/mesa-17.2.8::gentoo
+# required by virtual/opengl-7.0-r1::gentoo
+# required by media-libs/glu-9.0.0-r1::gentoo
+# required by virtual/glu-9.0-r1::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[opengl]
+# required by wine-staging (argument)
+>=x11-libs/libxshmfence-1.2 abi_x86_32
+# required by app-emulation/wine-staging-2.21::gentoo[mp3]
+# required by wine-staging (argument)
+>=media-sound/mpg123-1.25.6 abi_x86_32
+# required by x11-libs/libXfixes-5.0.3::gentoo
+# required by media-libs/mesa-17.2.8::gentoo
+# required by virtual/opengl-7.0-r1::gentoo
+# required by media-libs/glu-9.0.0-r1::gentoo
+# required by virtual/glu-9.0-r1::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[opengl]
+# required by wine-staging (argument)
+>=x11-proto/fixesproto-5.0-r1 abi_x86_32
+# required by media-libs/mesa-17.2.8::gentoo
+# required by virtual/opengl-7.0-r1::gentoo
+# required by media-libs/glu-9.0.0-r1::gentoo
+# required by virtual/glu-9.0-r1::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[opengl]
+# required by wine-staging (argument)
+>=x11-proto/xf86vidmodeproto-2.3.1-r1 abi_x86_32
+# required by app-emulation/wine-staging-2.21::gentoo[xcomposite]
+# required by wine-staging (argument)
+>=x11-libs/libXcomposite-0.4.4-r1 abi_x86_32
+# required by sys-apps/systemd-236-r5::gentoo
+# required by virtual/libudev-232::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[udev]
+# required by wine-staging (argument)
+>=sys-apps/util-linux-2.30.2 abi_x86_32
+# required by virtual/libudev-232::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[udev]
+# required by wine-staging (argument)
+>=sys-apps/systemd-236-r5 abi_x86_32
+# required by net-nds/openldap-2.4.44::gentoo[-libressl,-gnutls,ssl]
+# required by app-emulation/wine-staging-2.21::gentoo[ldap]
+# required by wine-staging (argument)
+>=dev-libs/openssl-1.0.2n abi_x86_32
+# required by app-emulation/wine-staging-2.21::gentoo[xml]
+# required by wine-staging (argument)
+>=dev-libs/libxslt-1.1.30-r2 abi_x86_32
+# required by x11-libs/libXrandr-1.5.1::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[X]
+# required by wine-staging (argument)
+>=x11-libs/libXrender-0.9.10 abi_x86_32
+# required by sys-apps/systemd-236-r5::gentoo
+# required by virtual/libudev-232::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[udev]
+# required by wine-staging (argument)
+>=sys-libs/libcap-2.24-r2 abi_x86_32
+# required by x11-libs/libXrandr-1.5.1::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[X]
+# required by wine-staging (argument)
+>=x11-proto/randrproto-1.5.0 abi_x86_32
+# required by net-libs/gnutls-3.5.15::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[ssl]
+# required by wine-staging (argument)
+>=dev-libs/nettle-3.3-r2 abi_x86_32
+# required by app-emulation/wine-staging-2.21::gentoo[X]
+# required by wine-staging (argument)
+>=x11-libs/libXrandr-1.5.1 abi_x86_32
+# required by dev-libs/glib-2.52.3::gentoo[xattr]
+# required by dev-util/pkgconfig-0.29.2::gentoo[-internal-glib]
+# required by virtual/pkgconfig-0-r1::gentoo
+# required by net-libs/gnutls-3.5.15::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[ssl]
+# required by wine-staging (argument)
+>=sys-apps/attr-2.4.47-r2 abi_x86_32
+# required by app-emulation/wine-staging-2.21::gentoo[nls]
+# required by wine-staging (argument)
+>=sys-devel/gettext-0.19.8.1 abi_x86_32
+# required by app-emulation/wine-staging-2.21::gentoo[gecko]
+# required by wine-staging (argument)
+>=app-emulation/wine-gecko-2.47-r1 abi_x86_32
+# required by media-libs/mesa-17.2.8::gentoo
+# required by virtual/opengl-7.0-r1::gentoo
+# required by media-libs/glu-9.0.0-r1::gentoo
+# required by virtual/glu-9.0-r1::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[opengl]
+# required by wine-staging (argument)
+>=x11-libs/libdrm-2.4.88 abi_x86_32
+# required by x11-libs/libxshmfence-1.2::gentoo
+# required by media-libs/mesa-17.2.8::gentoo
+# required by virtual/opengl-7.0-r1::gentoo
+# required by media-libs/glu-9.0.0-r1::gentoo
+# required by virtual/glu-9.0-r1::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[opengl]
+# required by wine-staging (argument)
+>=x11-proto/xproto-7.0.31 abi_x86_32
+# required by x11-libs/libX11-1.6.5::gentoo
+# required by x11-libs/libXxf86vm-1.1.4::gentoo
+# required by media-libs/mesa-17.2.8::gentoo
+# required by virtual/opengl-7.0-r1::gentoo
+# required by media-libs/glu-9.0.0-r1::gentoo
+# required by virtual/glu-9.0-r1::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[opengl]
+# required by wine-staging (argument)
+>=x11-proto/inputproto-2.3.2 abi_x86_32
+# required by media-libs/mesa-17.2.8::gentoo
+# required by virtual/opengl-7.0-r1::gentoo
+# required by media-libs/glu-9.0.0-r1::gentoo
+# required by virtual/glu-9.0-r1::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[opengl]
+# required by wine-staging (argument)
+>=x11-proto/dri2proto-2.8-r1 abi_x86_32
+# required by sys-apps/systemd-236-r5::gentoo[pam]
+# required by virtual/libudev-232::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[udev]
+# required by wine-staging (argument)
+>=virtual/pam-0-r1 abi_x86_32
+# required by app-emulation/wine-staging-2.21::gentoo[udev]
+# required by wine-staging (argument)
+>=virtual/libudev-232 abi_x86_32
+# required by x11-libs/libxcb-1.12-r2::gentoo
+# required by x11-libs/libX11-1.6.5::gentoo
+# required by x11-libs/libXxf86vm-1.1.4::gentoo
+# required by media-libs/mesa-17.2.8::gentoo
+# required by virtual/opengl-7.0-r1::gentoo
+# required by media-libs/glu-9.0.0-r1::gentoo
+# required by virtual/glu-9.0-r1::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[opengl]
+# required by wine-staging (argument)
+>=x11-libs/libXau-1.0.8 abi_x86_32
+# required by app-emulation/wine-staging-2.21::gentoo[X]
+# required by wine-staging (argument)
+>=x11-libs/libXcursor-1.1.15 abi_x86_32
+# required by x11-libs/libdrm-2.4.88::gentoo
+# required by media-libs/mesa-17.2.8::gentoo[-video_cards_i965,-video_cards_i915,video_cards_intel]
+# required by virtual/opengl-7.0-r1::gentoo
+# required by media-libs/glu-9.0.0-r1::gentoo
+# required by virtual/glu-9.0-r1::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[opengl]
+# required by wine-staging (argument)
+>=dev-libs/libpthread-stubs-0.4 abi_x86_32
+# required by x11-libs/libdrm-2.4.88::gentoo[video_cards_intel]
+# required by media-libs/mesa-17.2.8::gentoo[-video_cards_i965,-video_cards_i915,video_cards_intel]
+# required by virtual/opengl-7.0-r1::gentoo
+# required by media-libs/glu-9.0.0-r1::gentoo
+# required by virtual/glu-9.0-r1::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[opengl]
+# required by wine-staging (argument)
+>=x11-libs/libpciaccess-0.13.4 abi_x86_32
+# required by sys-libs/ncurses-6.0-r1::gentoo[gpm]
+# required by sys-apps/util-linux-2.30.2::gentoo[ncurses]
+# required by dev-libs/glib-2.52.3::gentoo
+# required by dev-util/pkgconfig-0.29.2::gentoo[-internal-glib]
+# required by virtual/pkgconfig-0-r1::gentoo
+# required by net-libs/gnutls-3.5.15::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[ssl]
+# required by wine-staging (argument)
+>=sys-libs/gpm-1.20.7-r2 abi_x86_32
+# required by app-emulation/wine-staging-2.21::gentoo[ldap]
+# required by wine-staging (argument)
+>=net-nds/openldap-2.4.44 abi_x86_32
+# required by app-emulation/wine-staging-2.21::gentoo[opengl]
+# required by wine-staging (argument)
+>=virtual/glu-9.0-r1 abi_x86_32
+# required by dev-libs/glib-2.52.3::gentoo
+# required by dev-util/pkgconfig-0.29.2::gentoo[-internal-glib]
+# required by virtual/pkgconfig-0-r1::gentoo
+# required by net-libs/gnutls-3.5.15::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[ssl]
+# required by wine-staging (argument)
+>=virtual/libintl-0-r2 abi_x86_32
+# required by x11-libs/libX11-1.6.5::gentoo
+# required by x11-libs/libXxf86vm-1.1.4::gentoo
+# required by media-libs/mesa-17.2.8::gentoo
+# required by virtual/opengl-7.0-r1::gentoo
+# required by media-libs/glu-9.0.0-r1::gentoo
+# required by virtual/glu-9.0-r1::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[opengl]
+# required by wine-staging (argument)
+>=x11-proto/kbproto-1.0.7 abi_x86_32
+# required by media-libs/mesa-17.2.8::gentoo
+# required by virtual/opengl-7.0-r1::gentoo
+# required by media-libs/glu-9.0.0-r1::gentoo
+# required by virtual/glu-9.0-r1::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[opengl]
+# required by wine-staging (argument)
+>=x11-proto/glproto-1.4.17-r1 abi_x86_32
+# required by app-emulation/wine-staging-2.21::gentoo[cups]
+# required by wine-staging (argument)
+>=net-print/cups-2.1.4 abi_x86_32
+# required by dev-util/pkgconfig-0.29.2::gentoo[-internal-glib]
+# required by virtual/pkgconfig-0-r1::gentoo
+# required by net-libs/gnutls-3.5.15::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[ssl]
+# required by wine-staging (argument)
+>=dev-libs/glib-2.52.3 abi_x86_32
+# required by x11-libs/libXcomposite-0.4.4-r1::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[xcomposite]
+# required by wine-staging (argument)
+>=x11-proto/compositeproto-0.4.2-r1 abi_x86_32
+# required by net-dns/libidn2-2.0.4::gentoo
+# required by net-libs/gnutls-3.5.15::gentoo[idn]
+# required by app-emulation/wine-staging-2.21::gentoo[ssl]
+# required by wine-staging (argument)
+>=dev-libs/libunistring-0.9.7 abi_x86_32
+# required by net-libs/gnutls-3.5.15::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[ssl]
+# required by wine-staging (argument)
+>=dev-libs/libtasn1-4.12-r1 abi_x86_32
+# required by virtual/pam-0-r1::gentoo
+# required by sys-apps/systemd-236-r5::gentoo[pam]
+# required by virtual/libudev-232::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[udev]
+# required by wine-staging (argument)
+>=sys-libs/pam-1.2.1-r2 abi_x86_32
+# required by x11-libs/libX11-1.6.5::gentoo
+# required by x11-libs/libXxf86vm-1.1.4::gentoo
+# required by media-libs/mesa-17.2.8::gentoo
+# required by virtual/opengl-7.0-r1::gentoo
+# required by media-libs/glu-9.0.0-r1::gentoo
+# required by virtual/glu-9.0-r1::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[opengl]
+# required by wine-staging (argument)
+>=x11-proto/xf86bigfontproto-1.2.0-r1 abi_x86_32
+# required by dev-libs/libxml2-2.9.7::gentoo[icu]
+# required by sys-devel/gettext-0.19.8.1::gentoo
+# required by dev-libs/libgpg-error-1.27-r1::gentoo[nls]
+# required by dev-libs/libgcrypt-1.8.1::gentoo
+# required by dev-libs/libxslt-1.1.30-r2::gentoo[crypt]
+# required by app-emulation/wine-staging-2.21::gentoo[xml]
+# required by wine-staging (argument)
+>=dev-libs/icu-58.2-r1 abi_x86_32
+# required by sys-apps/systemd-236-r5::gentoo[lz4]
+# required by virtual/libudev-232::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[udev]
+# required by wine-staging (argument)
+>=app-arch/lz4-1.8.0 abi_x86_32
+# required by media-libs/fontconfig-2.12.4::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[fontconfig]
+# required by wine-staging (argument)
+>=dev-libs/expat-2.2.5 abi_x86_32
+# required by dev-libs/libgcrypt-1.8.1::gentoo
+# required by dev-libs/libxslt-1.1.30-r2::gentoo[crypt]
+# required by app-emulation/wine-staging-2.21::gentoo[xml]
+# required by wine-staging (argument)
+>=dev-libs/libgpg-error-1.27-r1 abi_x86_32
+# required by sys-libs/pam-1.2.1-r2::gentoo[berkdb]
+# required by virtual/pam-0-r1::gentoo
+# required by sys-apps/systemd-236-r5::gentoo[pam]
+# required by virtual/libudev-232::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[udev]
+# required by wine-staging (argument)
+>=sys-libs/db-5.3.28-r2 abi_x86_32
+# required by media-libs/lcms-2.9::gentoo[tiff]
+# required by app-emulation/wine-staging-2.21::gentoo[lcms]
+# required by wine-staging (argument)
+>=media-libs/tiff-4.0.8 abi_x86_32
+# required by net-print/cups-2.1.4::gentoo[dbus]
+# required by app-emulation/wine-staging-2.21::gentoo[cups]
+# required by wine-staging (argument)
+>=sys-apps/dbus-1.12.2 abi_x86_32
+# required by x11-libs/libXdamage-1.1.4-r1::gentoo
+# required by media-libs/mesa-17.2.8::gentoo
+# required by virtual/opengl-7.0-r1::gentoo
+# required by media-libs/glu-9.0.0-r1::gentoo
+# required by virtual/glu-9.0-r1::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[opengl]
+# required by wine-staging (argument)
+>=x11-proto/damageproto-1.2.1-r1 abi_x86_32
+# required by virtual/glu-9.0-r1::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[opengl]
+# required by wine-staging (argument)
+>=media-libs/glu-9.0.0-r1 abi_x86_32
+# required by virtual/jpeg-0-r2::gentoo
+# required by media-libs/lcms-2.9::gentoo[jpeg]
+# required by app-emulation/wine-staging-2.21::gentoo[lcms]
+# required by wine-staging (argument)
+>=media-libs/libjpeg-turbo-1.5.1 abi_x86_32
+# required by media-libs/mesa-17.2.8::gentoo[dri3]
+# required by virtual/opengl-7.0-r1::gentoo
+# required by media-libs/glu-9.0.0-r1::gentoo
+# required by virtual/glu-9.0-r1::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[opengl]
+# required by wine-staging (argument)
+>=x11-proto/dri3proto-1.0 abi_x86_32
+# required by media-libs/mesa-17.2.8::gentoo[llvm,-video_cards_r600,-opencl,-video_cards_radeonsi,-video_cards_radeon]
+# required by virtual/opengl-7.0-r1::gentoo
+# required by media-libs/glu-9.0.0-r1::gentoo
+# required by virtual/glu-9.0-r1::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[opengl]
+# required by wine-staging (argument)
+>=sys-devel/llvm-5.0.1 abi_x86_32
+# required by media-libs/mesa-17.2.8::gentoo[dri3]
+# required by virtual/opengl-7.0-r1::gentoo
+# required by media-libs/glu-9.0.0-r1::gentoo
+# required by virtual/glu-9.0-r1::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[opengl]
+# required by wine-staging (argument)
+>=x11-proto/presentproto-1.1 abi_x86_32
+# required by x11-libs/libXfixes-5.0.3::gentoo
+# required by media-libs/mesa-17.2.8::gentoo
+# required by virtual/opengl-7.0-r1::gentoo
+# required by media-libs/glu-9.0.0-r1::gentoo
+# required by virtual/glu-9.0-r1::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[opengl]
+# required by wine-staging (argument)
+>=x11-libs/libX11-1.6.5 abi_x86_32
+# required by media-libs/mesa-17.2.8::gentoo[wayland]
+# required by virtual/opengl-7.0-r1::gentoo
+# required by media-libs/glu-9.0.0-r1::gentoo
+# required by virtual/glu-9.0-r1::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[opengl]
+# required by wine-staging (argument)
+>=dev-libs/wayland-1.13.0 abi_x86_32
+# required by media-libs/mesa-17.2.8::gentoo
+# required by virtual/opengl-7.0-r1::gentoo
+# required by media-libs/glu-9.0.0-r1::gentoo
+# required by virtual/glu-9.0-r1::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[opengl]
+# required by wine-staging (argument)
+>=x11-libs/libXdamage-1.1.4-r1 abi_x86_32
+# required by app-emulation/wine-staging-2.21::gentoo[X]
+# required by wine-staging (argument)
+>=x11-libs/libXi-1.7.9 abi_x86_32
+# required by x11-libs/libXrandr-1.5.1::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[X]
+# required by wine-staging (argument)
+>=x11-proto/renderproto-0.11.1-r1 abi_x86_32
+# required by app-emulation/wine-staging-2.21::gentoo[lcms]
+# required by wine-staging (argument)
+>=media-libs/lcms-2.9 abi_x86_32
+# required by net-libs/gnutls-3.5.15::gentoo[idn]
+# required by app-emulation/wine-staging-2.21::gentoo[ssl]
+# required by wine-staging (argument)
+>=net-dns/libidn2-2.0.4 abi_x86_32
+# required by x11-libs/libXext-1.3.3::gentoo
+# required by x11-libs/libXxf86vm-1.1.4::gentoo
+# required by media-libs/mesa-17.2.8::gentoo
+# required by virtual/opengl-7.0-r1::gentoo
+# required by media-libs/glu-9.0.0-r1::gentoo
+# required by virtual/glu-9.0-r1::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[opengl]
+# required by wine-staging (argument)
+>=x11-proto/xextproto-7.3.0 abi_x86_32
+# required by dev-libs/libxslt-1.1.30-r2::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[xml]
+# required by wine-staging (argument)
+>=dev-libs/libxml2-2.9.7 abi_x86_32
+# required by x11-libs/libxcb-1.12-r2::gentoo
+# required by x11-libs/libX11-1.6.5::gentoo
+# required by x11-libs/libXxf86vm-1.1.4::gentoo
+# required by media-libs/mesa-17.2.8::gentoo
+# required by virtual/opengl-7.0-r1::gentoo
+# required by media-libs/glu-9.0.0-r1::gentoo
+# required by virtual/glu-9.0-r1::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[opengl]
+# required by wine-staging (argument)
+# move x11-proto/xcb-proto x11-base/xcb-proto
+>=x11-base/xcb-proto-1.12-r2 abi_x86_32
+# required by net-libs/gnutls-3.5.15::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[ssl]
+# required by wine-staging (argument)
+>=virtual/pkgconfig-0-r1 abi_x86_32
+# required by media-libs/tiff-4.0.8::gentoo[jpeg]
+# required by media-libs/lcms-2.9::gentoo[tiff]
+# required by app-emulation/wine-staging-2.21::gentoo[lcms]
+# required by wine-staging (argument)
+>=virtual/jpeg-0-r2:0 abi_x86_32
+# required by media-libs/glu-9.0.0-r1::gentoo
+# required by virtual/glu-9.0-r1::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[opengl]
+# required by wine-staging (argument)
+>=virtual/opengl-7.0-r1 abi_x86_32
+# required by dev-libs/glib-2.52.3::gentoo
+# required by dev-util/pkgconfig-0.29.2::gentoo[-internal-glib]
+# required by virtual/pkgconfig-0-r1::gentoo
+# required by net-libs/gnutls-3.5.15::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[ssl]
+# required by wine-staging (argument)
+>=dev-libs/libpcre-8.41-r1 abi_x86_32
+# required by media-libs/freetype-2.8::gentoo[bzip2]
+# required by app-emulation/wine-staging-2.21::gentoo[truetype]
+# required by wine-staging (argument)
+>=app-arch/bzip2-1.0.6-r8 abi_x86_32
+# required by x11-libs/libX11-1.6.5::gentoo
+# required by x11-libs/libXxf86vm-1.1.4::gentoo
+# required by media-libs/mesa-17.2.8::gentoo
+# required by virtual/opengl-7.0-r1::gentoo
+# required by media-libs/glu-9.0.0-r1::gentoo
+# required by virtual/glu-9.0-r1::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[opengl]
+# required by wine-staging (argument)
+>=x11-libs/libxcb-1.12-r2 abi_x86_32
+# required by virtual/libffi-3.0.13-r1::gentoo
+# required by sys-devel/llvm-5.0.1::gentoo[libffi]
+# required by media-libs/mesa-17.2.8::gentoo[llvm,-video_cards_r600,-opencl,-video_cards_radeonsi,-video_cards_radeon]
+# required by virtual/opengl-7.0-r1::gentoo
+# required by media-libs/glu-9.0.0-r1::gentoo
+# required by virtual/glu-9.0-r1::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[opengl]
+# required by wine-staging (argument)
+>=dev-libs/libffi-3.2.1 abi_x86_32
+# required by media-libs/mesa-17.2.8::gentoo
+# required by virtual/opengl-7.0-r1::gentoo
+# required by media-libs/glu-9.0.0-r1::gentoo
+# required by virtual/glu-9.0-r1::gentoo
+# required by app-emulation/wine-staging-2.21::gentoo[opengl]
+# required by wine-staging (argument)
+>=x11-libs/libXxf86vm-1.1.4 abi_x86_32
+# required by dev-lang/php-5.6.33::gentoo[apache2]
+# required by =php-5.6.33 (argument)
+>=www-servers/apache-2.4.27-r1 -threads
+# required by dev-python/django-1.8.18::gentoo[python_targets_python3_5]
+# required by django (argument)
+>=dev-lang/python-3.5.4-r1:3.5 sqlite
+# required by dev-python/django-1.8.18::gentoo[python_targets_python2_7]
+# required by django (argument)
+>=dev-lang/python-2.7.14-r1:2.7 sqlite
+# required by x11-libs/pango-1.40.14::gentoo[X]
+# required by x11-libs/gtk+-3.22.19::gentoo
+# required by app-emulation/wine-staging-2.17-r1::local-overlay[themes]
+# required by @selected
+# required by @world (argument)
+>=x11-libs/libXft-2.3.2 abi_x86_32
+# required by x11-libs/gtk+-3.22.19::gentoo
+# required by app-emulation/wine-staging-2.17-r1::local-overlay[themes]
+# required by @selected
+# required by @world (argument)
+>=gnome-base/librsvg-2.40.18 abi_x86_32
+# required by app-accessibility/at-spi2-atk-2.24.1::gentoo
+# required by x11-libs/gtk+-3.22.19::gentoo[X]
+# required by app-emulation/wine-staging-2.17-r1::local-overlay[themes]
+# required by @selected
+# required by @world (argument)
+>=dev-libs/atk-2.24.0 abi_x86_32
+# required by x11-libs/libSM-1.2.2-r1::gentoo
+# required by app-accessibility/at-spi2-core-2.24.1::gentoo
+# required by app-accessibility/at-spi2-atk-2.24.1::gentoo
+# required by x11-libs/gtk+-3.22.19::gentoo[X]
+# required by app-emulation/wine-staging-2.17-r1::local-overlay[themes]
+# required by @selected
+# required by @world (argument)
+>=x11-libs/libICE-1.0.9-r1 abi_x86_32
+# required by x11-libs/gtk+-3.22.19::gentoo
+# required by app-emulation/wine-staging-2.17-r1::local-overlay[themes]
+# required by @selected
+# required by @world (argument)
+>=media-libs/libepoxy-1.4.2 abi_x86_32
+# required by app-emulation/wine-staging-2.17-r1::local-overlay[themes]
+# required by @selected
+# required by @world (argument)
+>=x11-libs/gtk+-3.22.19 abi_x86_32
+# required by x11-libs/libXtst-1.2.3::gentoo
+# required by app-accessibility/at-spi2-core-2.24.1::gentoo[X]
+# required by app-accessibility/at-spi2-atk-2.24.1::gentoo
+# required by x11-libs/gtk+-3.22.19::gentoo[X]
+# required by app-emulation/wine-staging-2.17-r1::local-overlay[themes]
+# required by @selected
+# required by @world (argument)
+>=x11-proto/recordproto-1.14.2-r1 abi_x86_32
+# required by x11-libs/cairo-1.14.12::gentoo
+# required by x11-libs/pango-1.40.14::gentoo
+# required by x11-libs/gtk+-3.22.19::gentoo
+# required by app-emulation/wine-staging-2.17-r1::local-overlay[themes]
+# required by @selected
+# required by @world (argument)
+>=dev-libs/lzo-2.09 abi_x86_32
+# required by x11-libs/gtk+-3.22.19::gentoo
+# required by app-emulation/wine-staging-2.17-r1::local-overlay[themes]
+# required by @selected
+# required by @world (argument)
+>=x11-libs/pango-1.40.14 abi_x86_32
+# required by x11-libs/pango-1.40.14::gentoo
+# required by x11-libs/gtk+-3.22.19::gentoo
+# required by app-emulation/wine-staging-2.17-r1::local-overlay[themes]
+# required by @selected
+# required by @world (argument)
+>=media-libs/harfbuzz-1.7.2 abi_x86_32
+# required by x11-libs/cairo-1.14.12::gentoo
+# required by x11-libs/pango-1.40.14::gentoo
+# required by x11-libs/gtk+-3.22.19::gentoo
+# required by app-emulation/wine-staging-2.17-r1::local-overlay[themes]
+# required by @selected
+# required by @world (argument)
+>=sys-libs/binutils-libs-2.29.1-r1 abi_x86_32
+# required by media-libs/harfbuzz-1.7.2::gentoo[graphite]
+# required by x11-libs/pango-1.40.14::gentoo
+# required by x11-libs/gtk+-3.22.19::gentoo
+# required by app-emulation/wine-staging-2.17-r1::local-overlay[themes]
+# required by @selected
+# required by @world (argument)
+>=media-gfx/graphite2-1.3.10 abi_x86_32
+# required by gnome-base/librsvg-2.40.18::gentoo
+# required by x11-libs/gtk+-3.22.19::gentoo
+# required by app-emulation/wine-staging-2.17-r1::local-overlay[themes]
+# required by @selected
+# required by @world (argument)
+>=x11-libs/gdk-pixbuf-2.36.11 abi_x86_32
+# required by x11-libs/gtk+-3.22.19::gentoo
+# required by app-emulation/wine-staging-2.17-r1::local-overlay[themes]
+# required by @selected
+# required by @world (argument)
+>=x11-libs/cairo-1.14.12 abi_x86_32
+# required by x11-libs/cairo-1.14.12::gentoo
+# required by x11-libs/pango-1.40.14::gentoo
+# required by x11-libs/gtk+-3.22.19::gentoo
+# required by app-emulation/wine-staging-2.17-r1::local-overlay[themes]
+# required by @selected
+# required by @world (argument)
+>=x11-libs/pixman-0.34.0 abi_x86_32
+# required by app-accessibility/at-spi2-atk-2.24.1::gentoo
+# required by x11-libs/gtk+-3.22.19::gentoo[X]
+# required by app-emulation/wine-staging-2.17-r1::local-overlay[themes]
+# required by @selected
+# required by @world (argument)
+>=app-accessibility/at-spi2-core-2.24.1 abi_x86_32
+# required by gnome-base/librsvg-2.40.18::gentoo
+# required by x11-libs/gtk+-3.22.19::gentoo
+# required by app-emulation/wine-staging-2.17-r1::local-overlay[themes]
+# required by @selected
+# required by @world (argument)
+>=dev-libs/libcroco-0.6.12-r1 abi_x86_32
+# required by x11-libs/gtk+-3.22.19::gentoo[X]
+# required by app-emulation/wine-staging-2.17-r1::local-overlay[themes]
+# required by @selected
+# required by @world (argument)
+>=app-accessibility/at-spi2-atk-2.24.1 abi_x86_32
+# required by app-accessibility/at-spi2-core-2.24.1::gentoo[X]
+# required by app-accessibility/at-spi2-atk-2.24.1::gentoo
+# required by x11-libs/gtk+-3.22.19::gentoo[X]
+# required by app-emulation/wine-staging-2.17-r1::local-overlay[themes]
+# required by @selected
+# required by @world (argument)
+>=x11-libs/libXtst-1.2.3 abi_x86_32
+# required by app-accessibility/at-spi2-core-2.24.1::gentoo
+# required by app-accessibility/at-spi2-atk-2.24.1::gentoo
+# required by x11-libs/gtk+-3.22.19::gentoo[X]
+# required by app-emulation/wine-staging-2.17-r1::local-overlay[themes]
+# required by @selected
+# required by @world (argument)
+>=x11-libs/libSM-1.2.2-r1 abi_x86_32
+# required by virtual/jack-0::gentoo
+# required by media-plugins/alsa-plugins-1.1.1-r1::gentoo[jack]
+# required by media-sound/pulseaudio-11.1::gentoo[alsa-plugin,alsa]
+# required by app-emulation/wine-staging-2.17-r1::local-overlay[pulseaudio]
+# required by @selected
+# required by @world (argument)
+>=media-sound/jack-audio-connection-kit-0.121.3-r1 abi_x86_32
+# required by media-libs/libvorbis-1.3.5::gentoo
+# required by media-libs/libsndfile-1.0.28-r1::gentoo[-minimal]
+# required by media-sound/pulseaudio-11.1::gentoo
+# required by app-emulation/wine-staging-2.17-r1::local-overlay[pulseaudio]
+# required by @selected
+# required by @world (argument)
+>=media-libs/libogg-1.3.2 abi_x86_32
+# required by media-libs/libsndfile-1.0.28-r1::gentoo[-minimal]
+# required by media-sound/pulseaudio-11.1::gentoo
+# required by app-emulation/wine-staging-2.17-r1::local-overlay[pulseaudio]
+# required by @selected
+# required by @world (argument)
+>=media-libs/flac-1.3.2-r1 abi_x86_32
+# required by media-sound/pulseaudio-11.1::gentoo[alsa-plugin,alsa]
+# required by app-emulation/wine-staging-2.17-r1::local-overlay[pulseaudio]
+# required by @selected
+# required by @world (argument)
+>=media-plugins/alsa-plugins-1.1.1-r1 abi_x86_32
+# required by media-sound/pulseaudio-11.1::gentoo[tcpd]
+# required by app-emulation/wine-staging-2.17-r1::local-overlay[pulseaudio]
+# required by @selected
+# required by @world (argument)
+>=sys-apps/tcp-wrappers-7.6.22-r1 abi_x86_32
+# required by media-sound/pulseaudio-11.1::gentoo[asyncns]
+# required by app-emulation/wine-staging-2.17-r1::local-overlay[pulseaudio]
+# required by @selected
+# required by @world (argument)
+>=net-libs/libasyncns-0.8-r3 abi_x86_32
+# required by media-libs/libsndfile-1.0.28-r1::gentoo[-minimal]
+# required by media-sound/pulseaudio-11.1::gentoo
+# required by app-emulation/wine-staging-2.17-r1::local-overlay[pulseaudio]
+# required by @selected
+# required by @world (argument)
+>=media-libs/libvorbis-1.3.5 abi_x86_32
+# required by media-plugins/alsa-plugins-1.1.1-r1::gentoo[pulseaudio]
+# required by @selected
+# required by @world (argument)
+>=media-sound/pulseaudio-11.1 abi_x86_32
+# required by media-plugins/alsa-plugins-1.1.1-r1::gentoo[jack]
+# required by media-sound/pulseaudio-11.1::gentoo[alsa-plugin,alsa]
+# required by app-emulation/wine-staging-2.17-r1::local-overlay[pulseaudio]
+# required by @selected
+# required by @world (argument)
+>=virtual/jack-0 abi_x86_32
+# required by media-sound/jack-audio-connection-kit-0.121.3-r1::gentoo
+# required by virtual/jack-0::gentoo
+# required by media-plugins/alsa-plugins-1.1.1-r1::gentoo[jack]
+# required by media-sound/pulseaudio-11.1::gentoo[alsa-plugin,alsa]
+# required by app-emulation/wine-staging-2.17-r1::local-overlay[pulseaudio]
+# required by @selected
+# required by @world (argument)
+>=media-libs/libsamplerate-0.1.9 abi_x86_32
+# required by media-sound/pulseaudio-11.1::gentoo
+# required by app-emulation/wine-staging-2.17-r1::local-overlay[pulseaudio]
+# required by @selected
+# required by @world (argument)
+>=media-libs/libsndfile-1.0.28-r1 abi_x86_32
+# required by app-emulation/wine-staging-2.17-r1::local-overlay[openal]
+# required by @selected
+# required by @world (argument)
+>=media-libs/openal-1.18.2-r1 abi_x86_32
+# required by media-libs/mesa-17.2.8::gentoo[-video_cards_radeonsi,llvm,opencl,-video_cards_radeon,-video_cards_r600]
+# required by media-libs/libepoxy-1.4.2::gentoo
+# required by x11-libs/gtk+-3.22.19::gentoo
+# required by media-sound/pulseaudio-11.1::gentoo[gtk]
+# required by app-emulation/wine-staging-2.17-r1::local-overlay[pulseaudio]
+# required by @selected
+# required by @world (argument)
+>=virtual/libelf-3 abi_x86_32
+# required by media-libs/mesa-17.2.8::gentoo[-video_cards_radeonsi,llvm,opencl,-video_cards_radeon,-video_cards_r600]
+# required by media-libs/libepoxy-1.4.2::gentoo
+# required by x11-libs/gtk+-3.22.19::gentoo
+# required by media-sound/pulseaudio-11.1::gentoo[gtk]
+# required by app-emulation/wine-staging-2.17-r1::local-overlay[pulseaudio]
+# required by @selected
+# required by @world (argument)
+>=sys-devel/clang-5.0.1 abi_x86_32
+# required by virtual/libelf-3::gentoo
+# required by media-libs/mesa-17.2.8::gentoo[-video_cards_radeonsi,llvm,opencl,-video_cards_radeon,-video_cards_r600]
+# required by media-libs/libepoxy-1.4.2::gentoo
+# required by x11-libs/gtk+-3.22.19::gentoo
+# required by media-sound/pulseaudio-11.1::gentoo[gtk]
+# required by app-emulation/wine-staging-2.17-r1::local-overlay[pulseaudio]
+# required by @selected
+# required by @world (argument)
+>=dev-libs/elfutils-0.170-r1 abi_x86_32
+# required by x11-libs/libva-intel-driver-1.7.3::gentoo
+>=x11-libs/libva-1.7.3 abi_x86_32
+# required by app-emulation/wine-staging-2.17-r1::local-overlay[opencl]
+# required by @selected
+# required by @world (argument)
+>=virtual/opencl-0-r4 abi_x86_32
+# required by virtual/opencl-0-r4::gentoo
+# required by app-emulation/wine-staging-2.17-r1::local-overlay[opencl]
+# required by @selected
+# required by @world (argument)
+>=media-libs/mesa-17.2.8 opencl
+# required by x11-libs/libva-1.7.3::gentoo[video_cards_i965,video_cards_intel]
+# required by app-emulation/wine-staging-2.17-r1::local-overlay[vaapi]
+# required by @selected
+# required by @world (argument)
+>=x11-libs/libva-intel-driver-1.7.3 abi_x86_32
+# required by x11-terms/termite-11::nightmare
+# required by x11-terms/termite (argument)
+=x11-libs/vte-0.42.1 termite-patch
+# required by x11-drivers/xf86-video-nouveau-1.0.15::gentoo
+# required by x11-drivers/xf86-video-nouveau (argument)
+>=x11-libs/libdrm-2.4.88 video_cards_nouveau
+# required by x11-drivers/nvidia-drivers-387.22::gentoo[X]
+# required by nvidia-drivers (argument)
+>=x11-libs/libvdpau-1.1.1 abi_x86_32
+# required by app-editors/neovim-0.2.2-r1::gentoo
+# required by dev-python/neovim-python-client-0.2.1-r1::gentoo
+>=dev-lua/lpeg-1.0.1 luajit
+# required by app-editors/neovim-0.2.2-r1::gentoo
+# required by dev-python/neovim-python-client-0.2.1-r1::gentoo
+>=dev-lua/mpack-1.0.4 luajit
+# required by dev-ruby/metasploit_data_models-2.0.14::gentoo[ruby_targets_ruby23]
+# required by net-analyzer/metasploit-4.16.46::pentoo[ruby_targets_ruby23]
+# required by metasploit (argument)
+>=dev-ruby/activerecord-4.2.10 postgres
+# required by app-arch/unar-1.10.1::gentoo
+# required by app-arch/unar (argument)
+>=gnustep-base/gnustep-make-2.6.8 native-exceptions
+# required by gnustep-base/gnustep-make-2.6.8::gentoo
+# required by gnustep-base/gnustep-base-1.24.9-r1::gentoo
+# required by app-arch/unar-1.10.1::gentoo
+# required by app-arch/unar (argument)
+>=sys-devel/gcc-6.4.0-r1 objc
+# required by x11-libs/libxcb-1.13::gentoo
+# required by x11-libs/xcb-util-cursor-0.1.3-r2::gentoo
+# required by x11-wm/i3-gaps-4.13::0x4d4c
+# required by @selected
+# required by @world (argument)
+>=x11-base/xcb-proto-1.13 abi_x86_32
+# required by dev-python/django-1.11.14::gentoo[python_targets_python3_6]
+# required by @selected
+# required by @world (argument)
+>=dev-lang/python-3.6.5 sqlite
+# required by www-client/qutebrowser-1.4.1::gentoo
+# required by www-client/qutebrowser (argument)
+>=dev-python/PyQt5-5.10.1-r1 webengine widgets webchannel sql
+# required by app-emulation/wine-staging-3.13-r1::gentoo[sdl]
+# required by =wine-staging-3.13-r1 (argument)
+>=media-libs/libsdl2-2.0.8-r1 haptic abi_x86_32
+# required by games-emulation/pcsx2-1.4.0::gentoo
+# required by pcsx2 (argument)
+>=app-arch/xz-utils-5.2.3 abi_x86_32
+# required by games-emulation/pcsx2-1.4.0::gentoo
+# required by pcsx2 (argument)
+>=dev-libs/libaio-0.3.110 abi_x86_32
+# required by games-emulation/pcsx2-1.4.0::gentoo
+# required by pcsx2 (argument)
+>=media-libs/libsdl-1.2.15-r9 abi_x86_32
+# required by games-emulation/pcsx2-1.4.0::gentoo
+# required by pcsx2 (argument)
+>=media-libs/libsoundtouch-1.8.0-r1 abi_x86_32
+# required by games-emulation/pcsx2-1.4.0::gentoo
+# required by pcsx2 (argument)
+>=media-libs/portaudio-19_pre20140130 abi_x86_32
+# required by x11-libs/wxGTK-3.0.4::gentoo[X]
+# required by games-emulation/pcsx2-1.4.0::gentoo
+# required by pcsx2 (argument)
+>=x11-libs/gtk+-2.24.32:2 abi_x86_32
+# required by games-emulation/pcsx2-1.4.0::gentoo
+# required by pcsx2 (argument)
+>=x11-libs/wxGTK-3.0.4:3.0 abi_x86_32
+# required by x11-libs/wxGTK-3.0.4::gentoo[libnotify,X]
+# required by games-emulation/pcsx2-1.4.0::gentoo
+# required by pcsx2 (argument)
+>=x11-libs/libnotify-0.7.7 abi_x86_32
+# required by media-libs/libsdl-1.2.15-r9::gentoo[sound]
+# required by x11-libs/wxGTK-3.0.4::gentoo[sdl]
+# required by games-emulation/pcsx2-1.4.0::gentoo
+# required by pcsx2 (argument)
+>=media-libs/audiofile-0.3.6-r3 abi_x86_32
+# required by games-emulation/pcsx2-1.4.0::gentoo
+# required by pcsx2 (argument)
+>=virtual/jpeg-62 abi_x86_32
+# required by games-emulation/pcsx2-9999::gentoo
+# required by =pcsx2-9999 (argument)
+>=x11-libs/wxGTK-3.0.4:3.0 -sdl
+# required by dev-util/android-studio-3.1.2.0.173.4720617::gentoo
+# required by android-studio (argument)
+>=sys-libs/ncurses-5.9-r101:5 tinfo
+# required by media-libs/mesa-18.1.6::gentoo[-video_cards_radeon,-video_cards_r100,video_cards_r600,-video_cards_r300,-video_cards_radeonsi,-video_cards_r200]
+# required by media-libs/gst-plugins-base-1.14.1::gentoo[-gles2,opengl]
+# required by media-libs/gst-plugins-good-1.14.1::gentoo
+# required by media-plugins/gst-plugins-gtk-1.14.1::gentoo
+# required by media-libs/gst-plugins-bad-1.14.1-r1::gentoo[gtk]
+# required by dev-qt/qtwebkit-5.212.0_pre20180120::gentoo[gstreamer]
+# required by kde-plasma/libksysguard-5.12.5::gentoo[detailedmemory]
+# required by kde-plasma/ksysguard-5.12.5::gentoo
+# required by kde-plasma/plasma-workspace-5.12.5::gentoo
+# required by kde-plasma/plasma-desktop-5.12.5-r1::gentoo
+# required by @selected
+# required by @world (argument)
+>=x11-libs/libdrm-2.4.93 video_cards_radeon
+# required by x11-libs/pango-1.42.4::gentoo
+# required by media-gfx/imagemagick-7.0.8.11::gentoo[pango]
+# required by @selected
+# required by @world (argument)
+>=dev-libs/fribidi-0.19.7 abi_x86_32
