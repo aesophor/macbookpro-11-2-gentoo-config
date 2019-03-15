@@ -10,9 +10,6 @@
 # #523356, #551834, #646106). Removal in a month. Possible alternative
 # #device/driver: https://bugs.gentoo.org/517250#c5
 =net-wireless/broadcom-sta-6.30.223.271-r4
-# required by =app-emulation/wine-staging-2.17-r1 (argument)
-# /etc/portage/package.mask:
-=app-emulation/wine-staging-2.17-r1
 # required by =dev-lang/ruby-2.2.10 (argument)
 # /usr/portage/profiles/package.mask:
 # Hans de Graaff <graaff@gentoo.org> (27 Apr 2018)
@@ -25,3 +22,15 @@
 # required by =wine-staging-3.13-r1 (argument)
 # /etc/portage/package.mask:
 =app-emulation/wine-staging-3.13-r1
+# required by =app-emulation/wine-staging-3.18 (argument)
+# /etc/portage/package.mask:
+=app-emulation/wine-staging-3.18
+# required by =app-emulation/wine-staging-3.21 (argument)
+# /etc/portage/package.mask:
+=app-emulation/wine-staging-3.21
+# required by avr-libc (argument)
+# /usr/portage/profiles/package.mask:
+# Diego E. Pettenò <flameeyes@gentoo.org> (03 Jan 2009)
+# These packages are not supposed to be merged directly, instead
+# please use sys-devel/crossdev to install them.
+=dev-embedded/avr-libc-2.0.0

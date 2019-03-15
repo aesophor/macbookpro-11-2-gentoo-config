@@ -509,3 +509,109 @@ net-wireless/broadcom-sta
 =games-emulation/ppsspp-1.5.4-r1 ~amd64
 # required by =dev-games/aseprite-1.1.7 (argument)
 =dev-games/aseprite-1.1.7 ~amd64
+# required by =app-office/wps-office-10.1.0.6757 (argument)
+=app-office/wps-office-10.1.0.6757 ~amd64
+# required by =app-emulation/wine-staging-3.18 (argument)
+=app-emulation/wine-staging-3.18 ~amd64
+# required by media-video/vlc-3.0.4::gentoo[dbus]
+# required by media-libs/phonon-vlc-0.10.1::gentoo
+# required by media-libs/phonon-4.10.1::gentoo[vlc]
+# required by kde-plasma/plasma-desktop-5.12.5::gentoo
+# required by @selected
+# required by @world (argument)
+=sys-apps/dbus-1.12.10 ~amd64
+# required by arc-theme (argument)
+=x11-themes/arc-theme-20181022 ~amd64
+# required by kvantum (argument)
+=x11-themes/kvantum-0.10.6 ~amd64
+# required by copyq (argument)
+=x11-apps/copyq-3.5.0 ~amd64
+# required by dispad (argument)
+=app-laptop/dispad-0.3.1-r1 ~amd64
+# required by skypeforlinux (argument)
+=net-im/skypeforlinux-8.33.0.41 ~amd64
+# required by =net-misc/youtube-dl-2018.10.29 (argument)
+=net-misc/youtube-dl-2018.10.29 ~amd64
+# required by ppsspp (argument)
+=games-emulation/ppsspp-1.5.4-r2 ~amd64
+# required by =dev-lang/python-3.7.0 (argument)
+=dev-lang/python-3.7.0 ~amd64
+# required by dev-lang/ruby-2.4.5::gentoo
+# required by dev-ruby/rdoc-6.0.4::gentoo[ruby_targets_ruby24]
+=dev-ruby/power_assert-1.1.3 ~amd64
+# required by games-misc/lolcat-90.8.8::gentoo[ruby_targets_ruby24]
+# required by @selected
+# required by @world (argument)
+=dev-ruby/trollop-2.1.3 ~amd64
+# required by dev-lang/ruby-2.4.5::gentoo
+# required by dev-ruby/rdoc-6.0.4::gentoo[ruby_targets_ruby24]
+=dev-ruby/minitest-5.11.3 ~amd64
+# required by dev-lang/ruby-2.4.5::gentoo
+# required by dev-ruby/rdoc-6.0.4::gentoo[ruby_targets_ruby24]
+=dev-ruby/did_you_mean-1.1.2 ~amd64
+# required by dev-lang/ruby-2.4.5::gentoo
+# required by dev-ruby/rdoc-6.0.4::gentoo[ruby_targets_ruby24]
+=dev-ruby/net-telnet-0.2.0 ~amd64
+# required by dev-lang/ruby-2.4.5::gentoo
+# required by dev-ruby/rdoc-6.0.4::gentoo[ruby_targets_ruby24]
+=dev-ruby/test-unit-3.2.8 ~amd64
+# required by dev-lang/ruby-2.4.5::gentoo
+# required by dev-ruby/rdoc-6.0.4::gentoo[ruby_targets_ruby24]
+=dev-ruby/rake-12.3.1 ~amd64
+# required by dev-ruby/rdoc-6.0.4::gentoo[ruby_targets_ruby24]
+=dev-lang/ruby-2.4.5 ~amd64
+# required by dev-lang/ruby-2.4.5::gentoo[rdoc]
+# required by games-misc/lolcat-90.8.8::gentoo[ruby_targets_ruby24]
+# required by @selected
+# required by @world (argument)
+=dev-ruby/rdoc-6.0.4 ~amd64
+# required by dev-lang/ruby-2.4.5::gentoo
+# required by dev-ruby/rdoc-6.0.4::gentoo[ruby_targets_ruby24]
+=dev-ruby/json-2.1.0 ~amd64
+# required by dev-ruby/rdoc-6.0.4::gentoo[ruby_targets_ruby23]
+# required by dev-lang/ruby-2.3.8::gentoo[rdoc]
+# required by dev-libs/ocl-icd-2.2.12::gentoo
+# required by media-libs/mesa-18.2.5::gentoo[opencl,gallium]
+# required by x11-base/xorg-server-1.20.3::gentoo[glamor]
+# required by @selected
+# required by @world (argument)
+=dev-ruby/kpeg-1.1.0-r1 ~amd64
+# required by @module-rebuild (argument)
+=app-emulation/virtualbox-modules-5.2.22 ~amd64
+# required by @module-rebuild (argument)
+=app-emulation/virtualbox-modules-5.2.20 ~amd64
+# required by @module-rebuild (argument)
+=app-emulation/virtualbox-modules-6.0.0_beta2 **
+# required by teamviewer (argument)
+=net-misc/teamviewer-13.2.13582 ~amd64
+# required by =app-emulation/wine-staging-3.21 (argument)
+=app-emulation/wine-staging-3.21 ~amd64
+# required by crazydiskinfo (argument)
+=sys-apps/crazydiskinfo-1.0.2 ~amd64
+# required by bcwc_pcie (argument)
+=media-video/bcwc_pcie-9999 ~amd64
+# required by media-video/bcwc_pcie-9999::toaster
+# required by bcwc_pcie (argument)
+=media-video/apple_facetimehd_firmware-1.43.0 ~amd64
+# required by sys-power/thermald-1.7.1::gentoo
+# required by @selected
+# required by @world (argument)
+=sys-apps/dbus-1.12.12 ~amd64
+# required by heroku-cli (argument)
+=dev-util/heroku-cli-7.19.4 ~amd64
+# required by bochs (argument)
+=app-emulation/bochs-2.6.9 ~amd64
+# required by xtrace (argument)
+=x11-misc/xtrace-1.3.0 ~amd64
+# required by iosevka (argument)
+=media-fonts/iosevka-1.14.1 ~amd64
+# required by la-capitaine-icon-theme (argument)
+=x11-themes/la-capitaine-icon-theme-9999 **
+# required by net-wireless/broadcom-sta::aesophor (argument)
+=net-wireless/broadcom-sta-6.30.223.271-r4 **
+# required by x11-misc/slop (argument)
+=x11-misc/slop-7.4 ~amd64
+# required by kitty (argument)
+=x11-terms/kitty-0.13.3 ~amd64
+# required by sxhkd (argument)
+=x11-misc/sxhkd-0.5.9 ~amd64

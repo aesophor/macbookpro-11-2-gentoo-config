@@ -1,6 +1,3 @@
->app-emulation/wine-staging-2.17
 >dev-lang/php-5.6.34
->www-client/chromium-67.0.3396.87
->=app-emulation/virtualbox-5.2.14-r1
->=app-emulation/virtualbox-modules-5.2.14
->=app-emulation/virtualbox-extpack-oracle-5.2.14.123301
+>=dev-python/django-2.0.8
+>sys-kernel/gentoo-sources-4.14.83
