@@ -974,7 +974,7 @@
 # required by gnome-extra/evolution-data-server-3.24.7::gentoo[-google,gnome-online-accounts]
 # required by gnome-base/gnome-shell-3.24.3::gentoo
 # required by gnome-base/gdm-3.24.3-r1::gentoo
->=net-misc/curl-7.64.0 curl_ssl_nss
+#>=net-misc/curl-7.64.0 curl_ssl_nss
 # required by dev-embedded/arduino-1.8.7::gentoo
 # required by arduino (argument)
 >=dev-util/astyle-3.1-r2 java
