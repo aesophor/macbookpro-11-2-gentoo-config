@@ -585,7 +585,7 @@ net-wireless/broadcom-sta
 # required by teamviewer (argument)
 =net-misc/teamviewer-13.2.13582 ~amd64
 # required by =app-emulation/wine-staging-3.21 (argument)
-=app-emulation/wine-staging-3.21 ~amd64
+#=app-emulation/wine-staging-3.21 ~amd64
 # required by crazydiskinfo (argument)
 =sys-apps/crazydiskinfo-1.0.2 ~amd64
 # required by bcwc_pcie (argument)
@@ -615,3 +615,63 @@ net-wireless/broadcom-sta
 =x11-terms/kitty-0.13.3 ~amd64
 # required by sxhkd (argument)
 =x11-misc/sxhkd-0.5.9 ~amd64
+# required by app-emulation/wine-staging-4.2::bobwya
+# required by =app-emulation/wine-staging-4.2 (argument)
+=app-eselect/eselect-wine-1.5.5 ~amd64
+# required by =app-emulation/wine-staging-4.2 (argument)
+=app-emulation/wine-staging-4.2 ~amd64
+# required by app-emulation/wine-staging-4.2::bobwya[mono]
+# required by =app-emulation/wine-staging-4.2 (argument)
+=app-emulation/wine-mono-4.7.5 ~amd64
+# required by app-emulation/wine-staging-4.2::bobwya[gecko]
+# required by wine-staging (argument)
+=app-emulation/wine-gecko-2.47 ~amd64
+# required by app-emulation/wine-staging-4.4::bobwya[mono]
+# required by =app-emulation/wine-staging-4.4 (argument)
+=app-emulation/wine-mono-4.8.0 ~amd64
+# required by =app-emulation/wine-staging-4.4 (argument)
+=app-emulation/wine-staging-4.4 ~amd64
+# required by =app-emulation/wine-staging-4.0-r2 (argument)
+=app-emulation/wine-staging-4.0-r2 ~amd64
+# required by =app-emulation/wine-staging-3.21-r4 (argument)
+=app-emulation/wine-staging-3.21-r4 ~amd64
+# required by papirus-icon-theme (argument)
+=x11-themes/papirus-icon-theme-20190302 ~amd64
+# required by stow (argument)
+=app-admin/stow-2.2.2-r1 ~amd64
+# required by tlp (argument)
+=app-laptop/tlp-1.2.1 ~amd64
+# required by app-laptop/tlp-1.2.1::tlp
+# required by tlp (argument)
+=sys-power/linux-x86-power-tools-4.20 ~amd64
+# required by dev-libs/box2d (argument)
+=dev-libs/box2d-2.3.1 ~amd64
+# required by neovim (argument)
+=app-editors/neovim-0.3.4-r1 ~amd64
+# required by app-editors/neovim-0.3.4-r1::gentoo[tui]
+# required by dev-python/neovim-python-client-0.3.2-r1::gentoo
+=dev-libs/unibilium-2.0.0 ~amd64
+# required by app-editors/neovim-0.3.4-r1::gentoo[python]
+# required by neovim (argument)
+=dev-python/neovim-python-client-0.3.2-r1 ~amd64
+# required by fritzing (argument)
+=sci-electronics/fritzing-0.9.2b-r2 ~amd64
+# required by antimicro (argument)
+=games-util/antimicro-2.23 ~amd64
+# required by wps-office::aesophor (argument)
+=app-office/wps-office-10.1.0.6758 ~amd64
+# required by cairo-dock (argument)
+=x11-misc/cairo-dock-3.4.1 ~amd64
+# required by dev-games/aseprite-1.2.11::Drauthius
+# required by @selected
+# required by @world (argument)
+=dev-games/aseprite-skia-9999-r71 **
+# required by =dev-games/aseprite-1.2.11 (argument)
+=dev-games/aseprite-1.2.11 ~amd64
+# required by app-emulation/wine-staging-4.10_p1::bobwya[mono]
+# required by wine-staging (argument)
+=app-emulation/wine-mono-4.8.3 ~amd64
+# required by wine-staging (argument)
+=app-emulation/wine-staging-4.10_p1 ~amd64
+# required by =app-emulation/wine-staging-3.21-r5 (argument)
+=app-emulation/wine-staging-3.21-r5 ~amd64

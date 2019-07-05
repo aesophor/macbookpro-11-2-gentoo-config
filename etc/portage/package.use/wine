@@ -1,2 +1,2 @@
-app-emulation/wine staging s3tc themes
-app-emulation/wine-staging s3tc themes
+app-emulation/wine staging s3tc themes pulseaudio
+app-emulation/wine-staging s3tc themes staging pulseaudio

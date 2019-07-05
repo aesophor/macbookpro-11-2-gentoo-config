@@ -34,3 +34,10 @@
 # These packages are not supposed to be merged directly, instead
 # please use sys-devel/crossdev to install them.
 =dev-embedded/avr-libc-2.0.0
+# required by =app-emulation/wine-staging-4.4-r1 (argument)
+# /etc/portage/package.mask:
+=app-emulation/wine-staging-4.4-r1
+# required by app-emulation/wine-staging-4.4-r1::gentoo[mono]
+# required by =app-emulation/wine-staging-4.4-r1 (argument)
+# /etc/portage/package.mask:
+=app-emulation/wine-mono-4.8.0

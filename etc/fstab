@@ -23,10 +23,12 @@
 #       documentation for details on setting a label. To obtain the UUID, use
 #       the blkid(8) command.
 
-#LABEL=boot		/boot		ext4		noauto,noatime	1 2
-#UUID=58e72203-57d1-4497-81ad-97655bd56494		/		ext4		noatime		0 1
-#LABEL=swap		none		swap		sw		0 0
-#/dev/cdrom		/mnt/cdrom	auto		noauto,ro	0 0
+#LABEL=boot		/boot		        ext4		noauto,noatime	1 2
+#UUID=58e72203-57d1-4497-81ad-97655bd56494  /	ext4		noatime		0 1
+#LABEL=swap		none		        swap		sw		0 0
+#/dev/cdrom		/mnt/cdrom	        auto		noauto,ro	0 0
 
-/dev/mapper/vgcrypt-root	/	ext4		discard,rw,relatime,data=ordered	0 1
-/dev/mapper/vgcrypt-home	/home	ext4		discard,rw,relatime,data=ordered	0 2
+/dev/mapper/vgcrypt-root	/	        ext4		rw,relatime,data=ordered,discard	0 1
+/dev/mapper/vgcrypt-home	/home	        ext4		rw,relatime,data=ordered,discard	0 2
+/dev/mapper/external            /mnt/external   ext4            defaults                                0 2
+/home/aesophor/.local/opt 	/opt 	        none 		bind 					0 0

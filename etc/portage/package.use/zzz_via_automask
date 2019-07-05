@@ -981,3 +981,6 @@
 # required by www-client/chromium-72.0.3626.96::gentoo
 # required by chromium (argument)
 >=net-libs/nodejs-8.12.0 inspector
+# required by app-emulation/wine-staging-4.2::bobwya[gecko]
+# required by wine-staging (argument)
+>=app-emulation/wine-gecko-2.47 abi_x86_32
