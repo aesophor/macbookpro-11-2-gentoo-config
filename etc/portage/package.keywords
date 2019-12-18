@@ -735,3 +735,7 @@ net-wireless/broadcom-sta
 # required by games-util/steam-meta-0-r20160817::steam-overlay[steamruntime]
 # required by steam-meta (argument)
 =games-util/steam-games-meta-0-r20191109 ~amd64
+# required by app-emulation/wine-staging:4.14_p1 (argument)
+=app-emulation/wine-staging-4.14_p1-r1 ~amd64
+# required by media-libs/libtxc_dxtn:0 (argument)
+=media-libs/libtxc_dxtn-1.0.1-r1 ~amd64
