@@ -41,3 +41,15 @@
 # required by =app-emulation/wine-staging-4.4-r1 (argument)
 # /etc/portage/package.mask:
 =app-emulation/wine-mono-4.8.0
+# required by virtual/httpd-php-7.3::gentoo
+# required by dev-db/phpmyadmin-4.9.0.1::gentoo
+# required by @selected
+# required by @world (argument)
+# /etc/portage/package.mask:
+=dev-lang/php-7.3.9
+# required by @__auto_slot_operator_replace_installed__ (argument)
+# /usr/portage/profiles/package.mask:
+# Brian Evans <grknight@gentoo.org> (2019-10-01)
+# End of life.  Please upgrade.
+# Removal in 90 days. Bug 651784
+=dev-lang/php-5.6.40-r6

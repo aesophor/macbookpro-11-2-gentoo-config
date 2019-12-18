@@ -984,3 +984,29 @@
 # required by app-emulation/wine-staging-4.2::bobwya[gecko]
 # required by wine-staging (argument)
 >=app-emulation/wine-gecko-2.47 abi_x86_32
+# required by media-video/peek-1.3.1-r2::gentoo
+# required by peek (argument)
+>=media-video/ffmpeg-4.1.3 vpx
+# required by games-emulation/pcsx2-9999::gentoo
+# required by @selected
+# required by @world (argument)
+>=net-libs/libpcap-1.8.1 abi_x86_32
+# required by net-libs/libpcap-1.8.1::gentoo[bluetooth]
+# required by net-analyzer/nmap-7.70::gentoo
+# required by @selected
+# required by @world (argument)
+>=net-wireless/bluez-5.50-r3 abi_x86_32
+# required by games-emulation/pcsx2-9999::gentoo
+# required by @selected
+# required by @world (argument)
+>=x11-libs/wxGTK-3.0.4-r302 abi_x86_32 -sdl
+# required by virtual/httpd-php-7.3::gentoo
+# required by dev-db/phpmyadmin-4.9.0.1::gentoo
+# required by @selected
+# required by @world (argument)
+>=dev-lang/php-7.3.9 fpm
+# required by dev-lang/php-7.3.9::gentoo
+# required by dev-db/phpmyadmin-4.9.0.1::gentoo
+# required by @selected
+# required by @world (argument)
+>=app-eselect/eselect-php-0.9.4-r5 fpm

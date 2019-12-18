@@ -20,7 +20,9 @@ app-emulation/wine-staging::wine
 app-emulation/winetricks::wine
 app-emulation/wine-vanilla::wine
 
->app-emulation/wine-staging-3.21-r5
+#>app-emulation/wine-staging-3.21-r5
 
 =media-libs/allegro-4.4.2-r2
 >dev-games/aseprite-1.1.7
+
+>net-wireless/wpa_supplicant-2.6-r10

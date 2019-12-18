@@ -5,3 +5,5 @@
 =media-video/simplescreenrecorder-0.3.11-r1 ~amd64
 # required by @preserved-rebuild (argument)
 =app-office/wps-office-11.1.0.8372 ~amd64
+
+=x11-wm/wmderland-1.0.2 ~amd64
