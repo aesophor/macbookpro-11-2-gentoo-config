@@ -1,0 +1,11 @@
+[Unit]
+Description=Reset MacBook's Internal SD card reader by pulling GPIO10 low for a second and then back to high.
+After=sleep.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash -c "/usr/local/sbin/gpioke --set-dir 10 1 --set-level 10 0 --sleep 1000 --set-level 10 1"
+
+[Install]
+WantedBy=sleep.target
+
