@@ -1,0 +1,12 @@
+# /etc/systemd/system/kbd-backlight.service
+
+[Unit]
+Description=Set screen brightness to 100 upon boot on linux.
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c "/usr/bin/light -S 100"
+
+[Install]
+WantedBy=multi-user.target
+

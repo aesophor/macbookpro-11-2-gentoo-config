@@ -1,0 +1,10 @@
+[Unit]
+Description=Post laptop suspension systemd service
+After=sleep.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash -c "/usr/local/sbin/post-suspend.sh"
+
+[Install]
+WantedBy=sleep.target

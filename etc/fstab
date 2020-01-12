@@ -30,5 +30,5 @@
 
 /dev/mapper/vgcrypt-root	/	        ext4		rw,relatime,data=ordered,discard	0 1
 /dev/mapper/vgcrypt-home	/home	        ext4		rw,relatime,data=ordered,discard	0 2
-/dev/mapper/external            /mnt/external   ext4            defaults                                0 2
+/dev/mapper/data                /mnt/data       ext4            defaults                                0 2
 /home/aesophor/.local/opt 	/opt 	        none 		bind 					0 0
